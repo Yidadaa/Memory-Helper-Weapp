@@ -2,9 +2,9 @@
   <view class="item">
     <view class="item-header">
       <input class="item-title" type="text" placeholder="项目名称" placeholder-class="item-text-holder"/>
-      <image src="/imgs/plus.png" class="item-add-icon"/>
+      <image src="/imgs/image.png" class="item-add-icon"/>
     </view>
-    <textarea placeholder="项目描述文字" placeholder-class="item-text-holder"/>
+    <textarea placeholder="项目描述文字" placeholder-class="item-text-holder" class="item-description"/>
   </view>
   <view class="edit-container page">
     <view class="edit-section">

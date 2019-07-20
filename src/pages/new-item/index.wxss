@@ -24,12 +24,17 @@
 
 .item-title {
   font-size: 60rpx;
-  height: 70rpx;
+  height: 84rpx;
   color: #fff;
+  max-width: 80%;
 }
 
 .item-text-holder {
   color: rgba(255, 255, 255, 0.5);
+}
+
+.item-description {
+  color: #fff;
 }
 
 .item-add-icon {
@@ -49,6 +54,7 @@
   bottom: 0;
   left: 0;
   padding-top: 20rpx;
+  animation: slide-in-bottom .8s ease;
 }
 
 .edit-section {
@@ -139,6 +145,8 @@
 .bottom-buttons {
   display: flex;
   justify-content: space-between;
+  margin-top: 40rpx;
+  animation: slide-in-bottom .9s ease;
 }
 
 .bottom-button {
