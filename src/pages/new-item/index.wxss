@@ -1,0 +1,146 @@
+@import '/style/animation.wxss';
+
+.page {
+  background-color: #00C0FF;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 正文区域 */
+.item {
+  margin-top: 20rpx;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: rgba(255, 255, 255, 0.5) 1rpx solid;
+  padding-bottom: 50rpx;
+  margin-bottom: 50rpx;
+}
+
+.item-title {
+  font-size: 60rpx;
+  height: 70rpx;
+  color: #fff;
+}
+
+.item-text-holder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.item-add-icon {
+  height: 60rpx;
+  width: 60rpx;
+}
+
+/* 属性编辑区域 */
+.edit-container {
+  background-color: #fff;
+  border-top-left-radius: 40rpx;
+  border-top-right-radius: 40rpx;
+  position: fixed;
+  height: 680rpx;
+  width: 100%;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  padding-top: 20rpx;
+}
+
+.edit-section {
+  margin-top: 50rpx;
+}
+
+.edit-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.edit-title {
+  font-size: 32rpx;
+  color: black;
+  font-weight: bold;
+  margin-right: 5rpx;
+}
+
+.edit-icon {
+  height: 32rpx;
+  width: 32rpx;
+}
+
+.colors {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.color {
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 100rpx;
+  margin-right: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected-indicator {
+  width: 41rpx;
+  height: 41rpx;
+  border-radius: 100rpx;
+  background-color: rgba(255, 255, 255, 0.5);
+  animation: scale-in .2s ease;
+}
+
+/* 评价段数 */
+.criterion-segs {
+  border-radius: 100rpx;
+  background-color: rgba(180, 237, 255, 0.3);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.criterion-count {
+  padding: 20rpx 40rpx;
+  font-size: 28rpx;
+  color: black;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.criterion-segs:before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  background: rgba(180, 237, 255, 0.8);
+  border-radius: 100rpx;
+  transition: all .3s ease;
+  z-index: -1;
+  float: left;
+}
+
+.criterion-right:before {
+  right: 0;
+  float: right;
+}
+
+.criterion-example {
+  text-align: center;
+  font-size: 28rpx;
+  padding: 40rpx;
+}
+
+.bottom-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-button {
+  width: 48%;
+}

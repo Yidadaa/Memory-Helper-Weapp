@@ -1,12 +1,25 @@
 /* 主要按钮 */
-.primary-btn {
+.common-btn {
   border-radius: 90rpx;
-  background-color: #00C0FF;
-  color: #fff;
+  color: #aaa;
   padding: 20rpx 60rpx;
   text-align: center;
-  box-shadow: rgba(0, 192, 255, 0.2) 8rpx 8rpx 16rpx;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 9, 0.1) 4rpx 4rpx 16rpx;
   transition: all ease .1s;
+  box-sizing: border-box;
+}
+
+.primary-btn {
+  background-color: #00C0FF;
+  color: #fff;
+  box-shadow: rgba(0, 192, 255, 0.2) 9rpx 9rpx 16rpx;
+}
+
+.cancel-btn {
+  background-color: rgb(255, 62, 120);
+  color: #fff;
+  box-shadow: rgba(255, 62, 120, 0.2) 9rpx 9rpx 16rpx;
 }
 
 .btn-on-hover {
