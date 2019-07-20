@@ -10,7 +10,11 @@ Page({
     time: 10,
 
     // 项目信息
-    items: []
+    items: [],
+
+    // 处理button动画
+    lastPageY: 0,
+    showBtn: true,
   },
 
   onLoad () {
@@ -23,5 +27,18 @@ Page({
         }
       })
     })
+  },
+
+  onPageScroll (e) {
+    const curY = e.scrollTop
+    const delta = curY - this.data.lastPageY
+    this.setData({
+      lastPageY: curY
+    })
+    if ((delta < 0) !== this.data.showBtn) {
+      this.setData({
+        showBtn: delta < 0
+      })
+    }
   }
 })

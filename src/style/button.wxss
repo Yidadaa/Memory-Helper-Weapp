@@ -1,0 +1,15 @@
+/* 主要按钮 */
+.primary-btn {
+  border-radius: 90rpx;
+  background-color: #00C0FF;
+  color: #fff;
+  padding: 20rpx 60rpx;
+  text-align: center;
+  box-shadow: rgba(0, 192, 255, 0.2) 8rpx 8rpx 16rpx;
+  transition: all ease .1s;
+}
+
+.btn-on-hover {
+  transform: scale(1.05);
+  filter: brightness(0.9);
+}

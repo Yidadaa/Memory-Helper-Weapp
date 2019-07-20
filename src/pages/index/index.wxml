@@ -41,4 +41,7 @@
       </view>
     </view>
   </view>
+  <view class="btn-container {{showBtn ? 'show-this' : 'hide-this'}}">
+    <view class="primary-btn" hover-class="btn-on-hover">开始复习</view>
+  </view>
 </view>

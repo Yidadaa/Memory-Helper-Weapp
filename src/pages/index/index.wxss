@@ -1,4 +1,6 @@
 /**index.wxss**/
+@import '/style/animation.wxss';
+
 .page-title {
     font-size: 56rpx;
     font-weight: bold;
@@ -92,4 +94,24 @@
 .block-tag:before {
   content: '#';
   margin-right: 5rpx;
+}
+
+/* 开始复习 */
+.btn-container {
+  position: fixed;
+  left: 0;
+  bottom: 20rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  transition: all ease .3s;
+}
+
+.show-this {
+  transform: translateY(0);
+}
+
+.hide-this {
+  transform: translateY(200rpx);
 }
