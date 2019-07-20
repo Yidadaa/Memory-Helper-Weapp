@@ -15,14 +15,14 @@
         <view class="summary-number-title">已完成</view>
         <image class="summary-number-icon"></image>
       </view>
-      <view class="summary-number-text">{{ remained }}</view>
+      <view class="summary-number-text">{{ finished }}</view>
     </view>
     <view class="summary-number">
       <view class="summary-number-header">
         <view class="summary-number-title">预计耗时</view>
         <image class="summary-number-icon"></image>
       </view>
-      <view class="summary-number-text summary-minutes">{{ remained }}</view>
+      <view class="summary-number-text summary-minutes">{{ time }}</view>
     </view>
   </view>
   <view class="section">
