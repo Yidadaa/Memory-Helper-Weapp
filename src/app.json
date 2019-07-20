@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/summary/index",
+    "pages/setting/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "/imgs/home-outline.png",
+      "selectedIconPath": "/imgs/home-outline.png"
+    }, {
+      "pagePath": "pages/summary/index",
+      "text": "汇总",
+      "iconPath": "/imgs/poll-box.png",
+      "selectedIconPath": "/imgs/poll-box.png"
+    }, {
+      "pagePath": "pages/setting/index",
+      "text": "设置",
+      "iconPath": "/imgs/settings-outline.png",
+      "selectedIconPath": "/imgs/settings-outline.png"
+    }]
+  }
+}

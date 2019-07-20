@@ -1,0 +1,33 @@
+/**app.wxss**/
+.page {
+  padding: 160rpx 54rpx 0 54rpx;
+}
+
+.section {
+  margin-top: 60rpx;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-title {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.header-btn {
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.section-content {
+  margin-top: 40rpx;
+}
+
+/* 为卡片添加圆角 */
+.with-radius {
+  border-radius: 40rpx;
+}

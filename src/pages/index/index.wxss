@@ -1,0 +1,95 @@
+/**index.wxss**/
+.page-title {
+    font-size: 56rpx;
+    font-weight: bold;
+    color: black;
+}
+
+/* 概览卡片 */
+.today-summary {
+  margin-top: 40rpx;
+  padding: 50rpx;
+  background-color: #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary-date {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  font-weight: bold;
+  width: 30%;
+}
+
+.summary-number-header {
+  display: flex;
+}
+
+.summary-number-title {
+  font-size: 24rpx;
+  color: #9b9b9b;
+}
+
+.summary-number-icon {
+  height: 24rpx;
+  width: 24rpx;
+  background-color: #eee;
+}
+
+.summary-number-text {
+  font-size: 50rpx;
+  font-weight: bold;
+}
+
+.summary-minutes:after {
+  content: 'min';
+  font-size: 24rpx;
+  margin-left: 5rpx;
+}
+
+/* 所有项目 */
+.all-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.content-block {
+  padding: 40rpx;
+  background-color: #eee;
+  width: 300rpx;
+  box-sizing: border-box;
+  margin-bottom: 40rpx;
+}
+
+.block-icon {
+  height: 140rpx;
+  width: 140rpx;
+  background-color: #ddd;
+}
+
+.block-title {
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+
+.block-tags {
+  margin-top: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 24rpx;
+}
+
+.block-tag {
+  padding: 5rpx 20rpx;
+  background-color: #ddd;
+  border-radius: 50rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.block-tag:before {
+  content: '#';
+  margin-right: 5rpx;
+}
