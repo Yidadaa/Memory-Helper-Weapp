@@ -2,8 +2,6 @@
 @import '/style/animation.wxss';
 
 .page-title {
-    font-size: 56rpx;
-    font-weight: bold;
     color: black;
 }
 

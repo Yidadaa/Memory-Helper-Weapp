@@ -1,5 +1,68 @@
-.page-title {
-    font-size: 56rpx;
-    font-weight: bold;
-    color: black;
+.summary-chart {
+  margin-top: 40rpx;
+}
+
+.chart-title {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.chart-content {
+  height: 240rpx;
+  padding-top: 40rpx;
+}
+
+/* 频率图表 */
+.frequency-chart {
+  background-color: #eee;
+  border-radius: 20rpx;
+  height: 240rpx;
+}
+
+/* 复习进度卡片 */
+.card {
+  box-shadow: 0 0 30rpx rgba(0, 0, 0, 0.1);
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  padding: 40rpx;
+}
+
+.progress-card {
+  justify-content: space-between;
+}
+
+.card-info {
+  display: flex;
+  align-content: center;
+}
+
+.card-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 28rpx;
+}
+
+.card-icon {
+  height: 34rpx;
+  width: 34rpx;
+  background-color: #eee;
+  margin-right: 15rpx;
+}
+
+.card-tips {
+  font-size: 24rpx;
+  margin-right: 20rpx;
+}
+
+.circle-chart {
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 100rpx;
+  border: #eee 8rpx solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  font-weight: bold;
 }

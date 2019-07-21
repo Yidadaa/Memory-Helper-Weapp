@@ -1,14 +1,11 @@
 @import '/style/animation.wxss';
 
 .page-header {
-  background-color: #00C0FF;
   color: white;
-  padding-bottom: 100rpx;
 }
 
-.page-title {
-  font-size: 56rpx;
-  font-weight: bold;
+.page-content {
+  padding-top: 40rpx;
 }
 
 .user-container {
@@ -39,15 +36,6 @@
   font-size: 28rpx;
 }
 
-.page-content {
-  border-top-left-radius: 40rpx;
-  border-top-right-radius: 40rpx;
-  position: relative;
-  top: -40rpx;
-  background-color: #fff;
-  padding-top: 60rpx;
-}
-
 .list-item {
   display: flex;
   justify-content: space-between;
@@ -76,7 +64,7 @@
   width: 44rpx;
 }
 
-.list-head {
+.list-head, .list-tail {
   display: flex;
   align-items: center;
 }
