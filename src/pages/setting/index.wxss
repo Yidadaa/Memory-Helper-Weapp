@@ -40,23 +40,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  overflow: hidden;
   padding: 40rpx 0;
-}
-
-/* 涟漪动画 */
-.list-item:before {
-  content: '';
-  position: absolute;
-  width: 10rpx;
-  height: 10rpx;
-  border-radius: 900rpx;
-  background-color: rgba(0, 0, 0, 0.05);
-  left: 50%;
-  transition: all ease .5s;
-  opacity: 0;
-  transform: scale(0);
 }
 
 .list-icon {
@@ -72,9 +56,4 @@
 .list-text {
   margin-left: 40rpx;
   font-size: 36rpx;
-}
-
-.list-on-hover:before {
-  opacity: 1;
-  transform: scale(100);
 }

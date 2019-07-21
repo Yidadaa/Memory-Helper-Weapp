@@ -12,7 +12,7 @@
     </view>
   </view>
   <view class="page-content page">
-    <view class="list-item" hover-class="list-on-hover">
+    <view class="list-item ripple" hover-class="ripple-on-hover">
       <view class="list-head">
         <image class="list-icon" src="/imgs/export.png"></image>
         <view class="list-text">数据导出</view>
@@ -21,7 +21,7 @@
         <image class="list-icon" src="/imgs/right.png"></image>
       </view>
     </view>
-    <view class="list-item" hover-class="list-on-hover">
+    <view class="list-item ripple" hover-class="ripple-on-hover">
       <view class="list-head">
         <image class="list-icon" src="/imgs/donate.png"></image>
         <view class="list-text">捐赠</view>
@@ -30,7 +30,7 @@
         <image class="list-icon" src="/imgs/right.png"></image>
       </view>
     </view>
-    <view class="list-item" hover-class="list-on-hover">
+    <view class="list-item ripple" hover-class="ripple-on-hover">
       <view class="list-head">
         <image class="list-icon" src="/imgs/story.png"></image>
         <view class="list-text">开发者故事</view>
@@ -39,7 +39,7 @@
         <image class="list-icon" src="/imgs/right.png"></image>
       </view>
     </view>
-    <view class="list-item" hover-class="list-on-hover">
+    <view class="list-item ripple" hover-class="ripple-on-hover">
       <view class="list-head">
         <image class="list-icon" src="/imgs/feedback.png"></image>
         <view class="list-text">建议反馈</view>

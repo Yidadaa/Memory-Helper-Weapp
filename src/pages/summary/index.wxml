@@ -22,7 +22,7 @@
         <view class="section-title">复习进度</view>
       </view>
       <view class="section-content">
-        <view class="card progress-card">
+        <view class="card progress-card ripple" hover-class="ripple-on-hover">
           <view class="card-content">
             <view class="card-left">
               <view class="card-title">LeetCode题目精选</view>
@@ -36,7 +36,7 @@
             <view class="card-right circle-chart">50%</view>
           </view>
         </view>
-        <view class="card progress-card">
+        <view class="card progress-card ripple" hover-class="ripple-on-hover">
           <view class="card-content">
             <view class="card-left">
               <view class="card-title">LeetCode题目精选</view>
@@ -50,7 +50,7 @@
             <view class="card-right circle-chart">50%</view>
           </view>
         </view>
-        <view class="card progress-card">
+        <view class="card progress-card ripple" hover-class="ripple-on-hover">
           <view class="card-content">
             <view class="card-left">
               <view class="card-title">LeetCode题目精选</view>
@@ -71,7 +71,7 @@
         <view class="section-title">复习动态</view>
       </view>
       <view class="section-content">
-        <view class="card feed-card">
+        <view class="card feed-card ripple" hover-class="ripple-on-hover">
           <view class="card-header">
             <image class="card-icon" src="/imgs/time.png"></image>
             <view class="card-tips">2018/07/19 23:12</view>
@@ -88,7 +88,7 @@
             <view class="card-tips">尝试4次</view>
           </view>
         </view>
-        <view class="card feed-card">
+        <view class="card feed-card ripple" hover-class="ripple-on-hover">
           <view class="card-header">
             <image class="card-icon" src="/imgs/time.png"></image>
             <view class="card-tips">2018/07/19 23:12</view>
@@ -105,7 +105,7 @@
             <view class="card-tips">尝试4次</view>
           </view>
         </view>
-        <view class="card feed-card">
+        <view class="card feed-card ripple" hover-class="ripple-on-hover">
           <view class="card-header">
             <image class="card-icon" src="/imgs/time.png"></image>
             <view class="card-tips">2018/07/19 23:12</view>

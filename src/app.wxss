@@ -55,3 +55,28 @@
 .with-radius {
   border-radius: 40rpx;
 }
+
+/* 涟漪动画 */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple:before {
+  content: '';
+  position: absolute;
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 900rpx;
+  background-color: rgba(0, 0, 0, 0.05);
+  left: 50%;
+  top: 50%;
+  transition: all ease .5s;
+  opacity: 0;
+  transform: scale(0);
+}
+
+.ripple-on-hover:before {
+  opacity: 1;
+  transform: scale(100);
+}
