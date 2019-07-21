@@ -124,7 +124,7 @@
   position: absolute;
   height: 100%;
   width: 50%;
-  background: rgba(180, 237, 255, 0.8);
+  background: rgba(180, 237, 255, 1.0);
   border-radius: 100rpx;
   transition: all .3s ease;
   z-index: -1;

@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/setting/index",
     "pages/index/index",
     "pages/new-item/index",
-    "pages/summary/index",
-    "pages/setting/index"
+    "pages/summary/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

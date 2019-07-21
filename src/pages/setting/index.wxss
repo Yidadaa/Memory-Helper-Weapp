@@ -1,5 +1,92 @@
+@import '/style/animation.wxss';
+
+.page-header {
+  background-color: #00C0FF;
+  color: white;
+  padding-bottom: 100rpx;
+}
+
 .page-title {
-    font-size: 56rpx;
-    font-weight: bold;
-    color: black;
+  font-size: 56rpx;
+  font-weight: bold;
+}
+
+.user-container {
+  display: flex;
+  align-items: center;
+  margin-top: 100rpx;
+}
+
+.user-info {
+  margin-left: 30rpx;
+}
+
+.user-avatar {
+  height: 128rpx;
+  width: 128rpx;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.user-name {
+  font-size: 40rpx;
+  font-weight: bold;
+  padding: 10rpx 0;
+}
+
+.user-date {
+  font-size: 28rpx;
+}
+
+.page-content {
+  border-top-left-radius: 40rpx;
+  border-top-right-radius: 40rpx;
+  position: relative;
+  top: -40rpx;
+  background-color: #fff;
+  padding-top: 60rpx;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 40rpx 0;
+}
+
+/* 涟漪动画 */
+.list-item:before {
+  content: '';
+  position: absolute;
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 900rpx;
+  background-color: rgba(0, 0, 0, 0.05);
+  left: 50%;
+  transition: all ease .5s;
+  opacity: 0;
+  transform: scale(0);
+}
+
+.list-icon {
+  height: 44rpx;
+  width: 44rpx;
+}
+
+.list-head {
+  display: flex;
+  align-items: center;
+}
+
+.list-text {
+  margin-left: 40rpx;
+  font-size: 36rpx;
+}
+
+.list-on-hover:before {
+  opacity: 1;
+  transform: scale(100);
 }

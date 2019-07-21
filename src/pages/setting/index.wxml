@@ -1,3 +1,52 @@
-<view class="page">
-  <view class="page-title">设置</view>
+<view>
+  <view class="page-header page">
+    <view class="page-title">设置</view>
+    <view class="user-container">
+      <open-data type="userAvatarUrl" class="user-avatar"></open-data>
+      <view class="user-info">
+        <view class="user-name">
+          <open-data type="userNickName" lang="zh_CN"></open-data>
+        </view>
+        <view class="user-date">2018年07月20日加入</view>
+      </view>
+    </view>
+  </view>
+  <view class="page-content page">
+    <view class="list-item" hover-class="list-on-hover">
+      <view class="list-head">
+        <image class="list-icon" src="/imgs/export.png"></image>
+        <view class="list-text">数据导出</view>
+      </view>
+      <view class="list-tail">
+        <image class="list-icon" src="/imgs/right.png"></image>
+      </view>
+    </view>
+    <view class="list-item" hover-class="list-on-hover">
+      <view class="list-head">
+        <image class="list-icon" src="/imgs/donate.png"></image>
+        <view class="list-text">捐赠</view>
+      </view>
+      <view class="list-tail">
+        <image class="list-icon" src="/imgs/right.png"></image>
+      </view>
+    </view>
+    <view class="list-item" hover-class="list-on-hover">
+      <view class="list-head">
+        <image class="list-icon" src="/imgs/story.png"></image>
+        <view class="list-text">开发者故事</view>
+      </view>
+      <view class="list-tail">
+        <image class="list-icon" src="/imgs/right.png"></image>
+      </view>
+    </view>
+    <view class="list-item" hover-class="list-on-hover">
+      <view class="list-head">
+        <image class="list-icon" src="/imgs/feedback.png"></image>
+        <view class="list-text">建议反馈</view>
+      </view>
+      <view class="list-tail">
+        <image class="list-icon" src="/imgs/right.png"></image>
+      </view>
+    </view>
+  </view>
 </view>
