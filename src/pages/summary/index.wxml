@@ -13,45 +13,113 @@
     <view class="section">
       <view class="section-header">
         <view class="section-title">频率</view>
-        <image class="header-btn" src="/imgs/plus.png"></image>
+        <image class="header-btn" src="/imgs/share.png"></image>
       </view>
       <view class="section-content frequency-chart"></view>
     </view>
     <view class="section">
       <view class="section-header">
         <view class="section-title">复习进度</view>
-        <image class="header-btn" src="/imgs/plus.png"></image>
       </view>
       <view class="section-content">
         <view class="card progress-card">
-          <view class="card-left">
-            <view class="card-title">LeetCode题目精选</view>
-            <view class="card-info">
-              <image class="card-icon"></image>
-              <view class="card-tips">15张卡片</view>
-              <image class="card-icon"></image>
-              <view class="card-tips">10张已掌握</view>
+          <view class="card-content">
+            <view class="card-left">
+              <view class="card-title">LeetCode题目精选</view>
+              <view class="card-bottom">
+                <image class="card-icon" src="/imgs/folder.png"></image>
+                <view class="card-tips">15张卡片</view>
+                <image class="card-icon" src="/imgs/finish.png"></image>
+                <view class="card-tips">10张已掌握</view>
+              </view>
             </view>
+            <view class="card-right circle-chart">50%</view>
           </view>
-          <view class="card-right circle-chart">50%</view>
+        </view>
+        <view class="card progress-card">
+          <view class="card-content">
+            <view class="card-left">
+              <view class="card-title">LeetCode题目精选</view>
+              <view class="card-bottom">
+                <image class="card-icon" src="/imgs/folder.png"></image>
+                <view class="card-tips">15张卡片</view>
+                <image class="card-icon" src="/imgs/finish.png"></image>
+                <view class="card-tips">10张已掌握</view>
+              </view>
+            </view>
+            <view class="card-right circle-chart">50%</view>
+          </view>
+        </view>
+        <view class="card progress-card">
+          <view class="card-content">
+            <view class="card-left">
+              <view class="card-title">LeetCode题目精选</view>
+              <view class="card-bottom">
+                <image class="card-icon" src="/imgs/folder.png"></image>
+                <view class="card-tips">15张卡片</view>
+                <image class="card-icon" src="/imgs/finish.png"></image>
+                <view class="card-tips">10张已掌握</view>
+              </view>
+            </view>
+            <view class="card-right circle-chart">50%</view>
+          </view>
         </view>
       </view>
     </view>
     <view class="section">
       <view class="section-header">
         <view class="section-title">复习动态</view>
-        <image class="header-btn" src="/imgs/plus.png"></image>
       </view>
       <view class="section-content">
         <view class="card feed-card">
-          <view class="card-left">
+          <view class="card-header">
+            <image class="card-icon" src="/imgs/time.png"></image>
+            <view class="card-tips">2018/07/19 23:12</view>
+          </view>
+          <view class="card-content">
             <view class="card-title">122 - 买卖股票的最佳时机</view>
-            <view class="card-info">
-              <image class="card-icon"></image>
-              <view class="card-tips">LeetCode题目精选</view>
-              <image class="card-icon"></image>
-              <view class="card-tips">2018/07/19 23:12</view>
-            </view>
+          </view>
+          <view class="card-bottom">
+            <image class="card-icon" src="/imgs/folder.png"></image>
+            <view class="card-tips">LeetCode题目精选</view>
+            <image class="card-icon" src="/imgs/finish.png"></image>
+            <view class="card-tips">掌握</view>
+            <image class="card-icon" src="/imgs/repeat.png"></image>
+            <view class="card-tips">尝试4次</view>
+          </view>
+        </view>
+        <view class="card feed-card">
+          <view class="card-header">
+            <image class="card-icon" src="/imgs/time.png"></image>
+            <view class="card-tips">2018/07/19 23:12</view>
+          </view>
+          <view class="card-content">
+            <view class="card-title">122 - 买卖股票的最佳时机</view>
+          </view>
+          <view class="card-bottom">
+            <image class="card-icon" src="/imgs/folder.png"></image>
+            <view class="card-tips">LeetCode题目精选</view>
+            <image class="card-icon" src="/imgs/finish.png"></image>
+            <view class="card-tips">掌握</view>
+            <image class="card-icon" src="/imgs/repeat.png"></image>
+            <view class="card-tips">尝试4次</view>
+          </view>
+        </view>
+        <view class="card feed-card">
+          <view class="card-header">
+            <image class="card-icon" src="/imgs/time.png"></image>
+            <view class="card-tips">2018/07/19 23:12</view>
+          </view>
+          <view class="card-content">
+            <view class="card-title">122 - 买卖股票的最佳时机</view>
+          </view>
+          <view class="card-bottom">
+            <image class="card-icon" src="/imgs/folder.png"></image>
+            <view class="card-tips">LeetCode题目精选</view>
+            <image class="card-icon" src="/imgs/finish.png"></image>
+            <view class="card-tips">掌握</view>
+            <image class="card-icon" src="/imgs/repeat.png"></image>
+            <view class="card-tips">尝试4次</view>
           </view>
         </view>
       </view>

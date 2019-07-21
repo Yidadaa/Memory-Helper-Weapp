@@ -19,40 +19,64 @@
   height: 240rpx;
 }
 
-/* 复习进度卡片 */
+/* 卡片通用样式 */
 .card {
   box-shadow: 0 0 30rpx rgba(0, 0, 0, 0.1);
   border-radius: 20rpx;
-  display: flex;
   align-items: center;
   padding: 40rpx;
 }
 
-.progress-card {
-  justify-content: space-between;
-}
-
-.card-info {
+/* 卡片头 */
+.card-header {
   display: flex;
-  align-content: center;
+  align-items: center;
+  margin-bottom: 28rpx;
 }
 
+/* 卡片标题 */
 .card-title {
   font-size: 32rpx;
   font-weight: bold;
   margin-bottom: 28rpx;
 }
 
+/* 卡片尾 */
+.card-bottom {
+  display: flex;
+  align-items: center;
+}
+
 .card-icon {
   height: 34rpx;
   width: 34rpx;
-  background-color: #eee;
-  margin-right: 15rpx;
+  margin-right: 10rpx;
+  display: inline-block;
 }
 
 .card-tips {
   font-size: 24rpx;
   margin-right: 20rpx;
+  display: inline-block;
+}
+
+/* 进度卡片和动态卡片的样式 */
+.progress-card {
+  justify-content: space-between;
+}
+
+.progress-card .card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-card, .feed-card {
+  margin-bottom: 40rpx;
+}
+
+.progress-card:last-child, .feed-card:last-child {
+  margin-bottom: 0;
 }
 
 .circle-chart {
