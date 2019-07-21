@@ -123,23 +123,24 @@
   content: '';
   position: absolute;
   height: 100%;
-  width: 50%;
-  background: rgba(180, 237, 255, 1.0);
+  width: 48%;
+  background: #00C0FF;
   border-radius: 100rpx;
   transition: all .3s ease;
   z-index: -1;
-  float: left;
+  left: 0;
+  box-shadow: rgba(0, 192, 255, 0.2) 9rpx 9rpx 16rpx;
 }
 
 .criterion-right:before {
-  right: 0;
-  float: right;
+  left: 52%;
 }
 
 .criterion-example {
   text-align: center;
   font-size: 28rpx;
   padding: 40rpx;
+  animation: slide-in-bottom ease .3s;
 }
 
 .bottom-buttons {

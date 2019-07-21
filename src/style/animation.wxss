@@ -28,13 +28,11 @@
   }
 }
 
-@keyframes scale-in-65x-and-fade-out {
+@keyframes scale-in{
   from {
     transform: scale(0);
-    opacity: 1;
   }
   to {
-    transform: scale(65);
-    opacity: 0.2;
+    transform: scale(1);
   }
 }

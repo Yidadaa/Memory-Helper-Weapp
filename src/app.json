@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/new-item/index",
     "pages/setting/index",
     "pages/index/index",
-    "pages/new-item/index",
     "pages/summary/index"
   ],
   "window": {
