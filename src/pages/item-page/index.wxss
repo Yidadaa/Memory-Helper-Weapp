@@ -1,0 +1,57 @@
+@import '/style/card.wxss';
+@import '/style/button.wxss';
+@import '/style/animation.wxss';
+
+.item-date-range {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.item-info {
+  display: flex;
+  align-items: center;
+  margin-top: 30rpx;
+}
+
+.item-icon {
+  height: 28rpx;
+  width: 28rpx;
+  margin-right: 10rpx;
+}
+
+.item-text {
+  font-size: 28rpx;
+  margin-right: 30rpx;
+}
+
+/* 进度卡片和动态卡片的样式 */
+.progress-card {
+  justify-content: space-between;
+}
+
+.progress-card .card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-card, .feed-card {
+  margin-bottom: 40rpx;
+}
+
+.progress-card:last-child, .feed-card:last-child {
+  margin-bottom: 0;
+}
+
+.bottom-buttons {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+  animation: slide-in-bottom .5s ease;
+}
+
+.bottom-buttons .common-btn {
+  width: 48%;
+}

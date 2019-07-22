@@ -12,7 +12,6 @@
 }
 
 .blur-dot {
-  /* filter: grayscale(1); */
   opacity: .2;
 }
 
@@ -50,7 +49,7 @@
   font-size: 20rpx;
   font-family: monospace;
   float: right;
-  color: rgb(255, 62, 120);
+  color: rgba(255, 62, 120, 0.5);
 }
 
 .dot-tips {

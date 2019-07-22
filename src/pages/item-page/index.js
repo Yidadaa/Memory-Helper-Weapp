@@ -1,12 +1,12 @@
 Page({
   data: {
+    itemTitle: 'LeetCode题目精选',
     summaryChartArray: [],
     summaryChartNoData: false,
     summaryChartLoading: false,
     frequencyChartData: [],
     frequencyChartLoading: true,
     frequencyChartNoData: false,
-    items: new Array(4).fill(0),
     cards: new Array(5).fill(0)
   },
 
@@ -16,6 +16,10 @@ Page({
 
   onPullDownRefresh () {
     this.loadData()
+  },
+
+  onPageScroll (e) {
+    this.selectComponent('#fixed-bottom').onPageScroll(e)
   },
 
   loadData () {

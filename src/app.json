@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/summary/index",
     "pages/index/index",
+    "pages/item-page/index",
+    "pages/summary/index",
     "pages/new-item/index",
     "pages/setting/index"
   ],

@@ -33,17 +33,19 @@
       </navigator>
     </view>
     <view class="section-content all-items">
-      <view class="content-block with-radius" wx:for="{{items}}" wx:key="index">
+      <navigator class="content-block with-radius" wx:for="{{items}}" wx:key="index" url="/pages/item-page/index">
         <image class="block-icon" />
         <view class="block-title">{{item.title}}</view>
         <view class="block-tags">
           <view class="block-tag" wx:for="{{item.tags}}" wx:for-item="tag"
             wx:for-index="tkey" wx:key="tkey">{{tag}}</view>
         </view>
-      </view>
+      </navigator>
     </view>
   </view>
-  <view class="btn-container {{showBtn ? 'show-this' : 'hide-this'}}">
-    <view class="common-btn primary-btn" hover-class="btn-on-hover">开始复习</view>
-  </view>
+  <fixed-bottom id="fixed-bottom">
+    <view class="btn-container">
+      <view class="common-btn primary-btn" hover-class="btn-on-hover">开始复习</view>
+    </view>
+  </fixed-bottom>
 </view>

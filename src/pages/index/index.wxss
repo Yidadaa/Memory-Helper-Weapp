@@ -96,20 +96,9 @@
 
 /* 开始复习 */
 .btn-container {
-  position: fixed;
-  left: 0;
-  bottom: 20rpx;
   width: 100%;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  transition: all ease .3s;
-}
-
-.show-this {
-  transform: translateY(0);
-}
-
-.hide-this {
-  transform: translateY(200rpx);
+  margin-bottom: 20rpx;
 }

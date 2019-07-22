@@ -6,7 +6,7 @@
   text-align: center;
   background-color: #fff;
   box-shadow: rgba(0, 0, 9, 0.1) 4rpx 4rpx 16rpx;
-  transition: all ease .1s;
+  transition: all ease .2s;
   box-sizing: border-box;
 }
 

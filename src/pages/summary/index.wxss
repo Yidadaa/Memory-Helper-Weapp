@@ -1,3 +1,5 @@
+@import '/style/card.wxss';
+
 .summary-chart {
   margin-top: 40rpx;
 }
@@ -15,47 +17,6 @@
 /* 频率图表 */
 .frequency-chart {
   border-radius: 20rpx;
-}
-
-/* 卡片通用样式 */
-.card {
-  box-shadow: 0 0 30rpx rgba(0, 0, 0, 0.1);
-  border-radius: 20rpx;
-  align-items: center;
-  padding: 40rpx;
-}
-
-/* 卡片头 */
-.card-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 28rpx;
-}
-
-/* 卡片标题 */
-.card-title {
-  font-size: 32rpx;
-  font-weight: bold;
-  margin-bottom: 28rpx;
-}
-
-/* 卡片尾 */
-.card-bottom {
-  display: flex;
-  align-items: center;
-}
-
-.card-icon {
-  height: 34rpx;
-  width: 34rpx;
-  margin-right: 10rpx;
-  display: inline-block;
-}
-
-.card-tips {
-  font-size: 24rpx;
-  margin-right: 20rpx;
-  display: inline-block;
 }
 
 /* 进度卡片和动态卡片的样式 */

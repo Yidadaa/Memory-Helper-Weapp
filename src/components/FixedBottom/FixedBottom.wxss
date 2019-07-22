@@ -1,0 +1,19 @@
+/* 开始复习 */
+.fixed-bottom-container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all ease .3s;
+}
+
+.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.hide {
+  transform: translateY(200rpx);
+  opacity: 0;
+}

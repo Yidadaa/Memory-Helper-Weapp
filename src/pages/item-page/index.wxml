@@ -1,12 +1,14 @@
 <view>
   <view class="page-header page">
-    <view class="page-title">汇总</view>
-    <view class="summary-chart">
-      <view class="chart-title">2018 / 07 / 01 - 2018 / 07 / 20</view>
-      <view class="chart-content">
-        <bar-chart data="{{summaryChartArray}}" loading="{{summaryChartLoading}}"
-          no-data="{{summaryChartNoData}}"></bar-chart>
-      </view>
+    <view class="item-date-range">2018 / 07 / 01 - 2018 / 07 / 20</view>
+    <view class="page-title">{{itemTitle}}</view>
+    <view class="item-info">
+      <image class="item-icon" src="/imgs/folder.png"></image>
+      <view class="item-text">15张卡片</view>
+      <image class="item-icon" src="/imgs/finish.png"></image>
+      <view class="item-text">10张已完成</view>
+      <image class="item-icon" src="/imgs/time.png"></image>
+      <view class="item-text">预计10天完成</view>
     </view>
   </view>
   <view class="page-content page">
@@ -22,29 +24,7 @@
     </view>
     <view class="section">
       <view class="section-header">
-        <view class="section-title">复习进度</view>
-      </view>
-      <view class="section-content">
-        <navigator class="card progress-card ripple" hover-class="ripple-on-hover"
-            wx:for="{{items}}" wx:key="index" url="/pages/item-page/index">
-          <view class="card-content">
-            <view class="card-left">
-              <view class="card-title">LeetCode题目精选</view>
-              <view class="card-bottom">
-                <image class="card-icon" src="/imgs/folder.png"></image>
-                <view class="card-tips">15张卡片</view>
-                <image class="card-icon" src="/imgs/finish.png"></image>
-                <view class="card-tips">10张已掌握</view>
-              </view>
-            </view>
-            <view class="card-right circle-chart">50%</view>
-          </view>
-        </navigator>
-      </view>
-    </view>
-    <view class="section">
-      <view class="section-header">
-        <view class="section-title">复习动态</view>
+        <view class="section-title">卡片</view>
       </view>
       <view class="section-content">
         <view class="card feed-card ripple" hover-class="ripple-on-hover" wx:for="{{cards}}" wx:key="index">
@@ -54,6 +34,7 @@
           </view>
           <view class="card-content">
             <view class="card-title">122 - 买卖股票的最佳时机</view>
+            <view class="card-text">只需要选择基色的亮度和饱和度值与混合色进行混合而创建的效果，混合后的亮度及饱和度取决于基色，但色相取决于混合色</view>
           </view>
           <view class="card-bottom">
             <image class="card-icon" src="/imgs/folder.png"></image>
@@ -61,10 +42,16 @@
             <image class="card-icon" src="/imgs/finish.png"></image>
             <view class="card-tips">掌握</view>
             <image class="card-icon" src="/imgs/repeat.png"></image>
-            <view class="card-tips">尝试4次</view>
+            <view class="card-tips">重复10次</view>
           </view>
         </view>
       </view>
     </view>
   </view>
+  <fixed-bottom id="fixed-bottom">
+    <view class="bottom-buttons page">
+      <navigator class="common-btn" open-type="navigateBack" hover-class="btn-on-hover">返回上层</navigator>
+      <navigator class="common-btn primary-btn" url="/pages/new-item/index" hover-class="btn-on-hover">新建卡片</navigator>
+    </view>
+  </fixed-bottom>
 </view>
