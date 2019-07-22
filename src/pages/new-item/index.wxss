@@ -6,18 +6,20 @@
   height: 100%;
   width: 100%;
   box-sizing: border-box;
+  transition: all ease .5s;
 }
 
 /* 正文区域 */
 .item {
   margin-top: 20rpx;
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .item-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: rgba(255, 255, 255, 0.5) 1rpx solid;
+  border-bottom: rgba(0, 0, 0, 0.1) 1rpx solid;
   padding-bottom: 50rpx;
   margin-bottom: 50rpx;
 }
@@ -25,16 +27,11 @@
 .item-title {
   font-size: 60rpx;
   height: 84rpx;
-  color: #fff;
   max-width: 80%;
 }
 
 .item-text-holder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.item-description {
-  color: #fff;
+  color: rgba(0, 0, 0, 0.2);
 }
 
 .item-add-icon {
@@ -105,7 +102,7 @@
 /* 评价段数 */
 .criterion-segs {
   border-radius: 100rpx;
-  background-color: rgba(180, 237, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   position: relative;
@@ -114,25 +111,26 @@
 .criterion-count {
   padding: 20rpx 40rpx;
   font-size: 28rpx;
-  color: black;
+  color: #fff;
   flex-grow: 1;
   text-align: center;
+  text-shadow: 1rpx 1rpx 1rpx rgba(0, 0, 0, 0.2);
+  font-weight: bold;
 }
 
-.criterion-segs:before {
-  content: '';
+.criterion-indicator {
   position: absolute;
   height: 100%;
   width: 48%;
   background: #00C0FF;
   border-radius: 100rpx;
   transition: all .3s ease;
-  z-index: -1;
   left: 0;
   box-shadow: rgba(0, 192, 255, 0.2) 9rpx 9rpx 16rpx;
+  z-index: -1;
 }
 
-.criterion-right:before {
+.criterion-right {
   left: 52%;
 }
 
@@ -141,6 +139,7 @@
   font-size: 28rpx;
   padding: 40rpx;
   animation: slide-in-bottom ease .3s;
+  font-weight: bold;
 }
 
 .bottom-buttons {

@@ -1,6 +1,8 @@
+import { colors } from '../../utils/constant.js'
+
 Page({
   data: {
-    colors: ['rgba(0, 192, 255, 1)', 'rgba(255, 62, 120, 1)', 'rgba(149, 210, 186, 1)'],
+    colors,
     selectedColorIndex: 0,
     criterionCount: 0,
     criterionExamples: ['忘记 / 掌握', '忘记 / 了解 / 掌握']

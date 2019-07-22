@@ -1,4 +1,4 @@
-<view class="page">
+<view class="page" style="background-color: {{colors[selectedColorIndex]}}">
   <view class="item">
     <view class="item-header">
       <input class="item-title" type="text" placeholder="项目名称" placeholder-class="item-text-holder"/>
@@ -13,7 +13,8 @@
         <image src="/imgs/color-lens.svg" class="edit-icon"/>
       </view>
       <view class="colors">
-        <view class="color" style="background: {{item}}" wx:for="{{colors}}" data-index="{{index}}" bind:tap="onColorSelected">
+        <view class="color" style="background: {{item}}" wx:for="{{colors}}" data-index="{{index}}"
+            bind:tap="onColorSelected" wx:key="{{index}}">
           <view class="selected-indicator" wx:if="{{index === selectedColorIndex}}"></view>  
         </view>
       </view>
@@ -23,11 +24,12 @@
         <view class="edit-title">评价粒度</view>
         <image src="/imgs/poll.svg" class="edit-icon"/>
       </view>
-      <view class="criterion-segs {{criterionCount > 0 ? 'criterion-right' : 'criterion-left'}}">
+      <view class="criterion-segs">
+        <view class="criterion-indicator {{criterionCount > 0 ? 'criterion-right' : 'criterion-left'}}" style="background-color: {{colors[selectedColorIndex]}}"></view>
         <view class="criterion-count" data-index="0" bindtap="onCriterionChange">二段式</view>
         <view class="criterion-count" data-index="1" bindtap="onCriterionChange">三段式</view>
       </view>
-      <view class="criterion-example">{{criterionExamples[criterionCount]}}</view>
+      <view class="criterion-example" style="color: {{colors[selectedColorIndex]}}">{{criterionExamples[criterionCount]}}</view>
       <view class="bottom-buttons">
         <view class="bottom-button common-btn cancel-btn" hover-class="btn-on-hover" bind:tap="onCancelBtn">
           <image src="/imgs/arrow-back-white.svg" class="btn-icon"/>

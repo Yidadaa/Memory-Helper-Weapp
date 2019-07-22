@@ -1,6 +1,5 @@
 //index.js
-//获取应用实例
-const app = getApp()
+import { colors } from '../../utils/constant.js'
 
 Page({
   data: {
@@ -19,7 +18,6 @@ Page({
 
   onLoad () {
     const icons = ['finish-white', 'add-icon-white', 'folder-white', 'save-white']
-    const colors = ['rgb(0, 192, 255)', 'rgb(255, 62, 120)', 'rgb(149, 210, 186)', 'rgb(254, 217, 129)', 'rgb(255, 100, 76)']
     this.setData({
       items: new Array(5).fill(0).map((v, i) => {
         return {
