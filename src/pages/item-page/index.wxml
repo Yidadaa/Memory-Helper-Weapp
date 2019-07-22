@@ -50,8 +50,8 @@
   </view>
   <fixed-bottom id="fixed-bottom">
     <view class="bottom-buttons page">
-      <navigator class="common-btn" open-type="navigateBack" hover-class="btn-on-hover">返回上层</navigator>
-      <navigator class="common-btn primary-btn" url="/pages/new-item/index" hover-class="btn-on-hover">新建卡片</navigator>
+      <navigator class="common-btn cancel-btn" open-type="navigateBack" hover-class="btn-on-hover">返回上层</navigator>
+      <navigator class="common-btn primary-btn" url="/pages/new-card/index" hover-class="btn-on-hover">新建卡片</navigator>
     </view>
   </fixed-bottom>
 </view>

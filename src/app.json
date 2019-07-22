@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/new-card/index",
     "pages/index/index",
     "pages/item-page/index",
     "pages/summary/index",

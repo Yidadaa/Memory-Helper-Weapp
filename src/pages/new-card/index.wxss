@@ -1,4 +1,5 @@
 @import '/style/animation.wxss';
+@import '/style/list.wxss';
 
 .page {
   background-color: #00C0FF;
@@ -48,7 +49,7 @@
   border-top-left-radius: 40rpx;
   border-top-right-radius: 40rpx;
   position: fixed;
-  height: 680rpx;
+  height: 420rpx;
   width: 100%;
   z-index: 100;
   bottom: 0;
@@ -79,77 +80,67 @@
   width: 32rpx;
 }
 
-.colors {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.color {
-  height: 60rpx;
-  width: 60rpx;
-  border-radius: 100rpx;
-  margin-right: 30rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.selected-indicator {
-  width: 41rpx;
-  height: 41rpx;
-  border-radius: 100rpx;
-  background-color: rgba(255, 255, 255, 0.5);
-  animation: scale-in .2s ease;
-}
-
-/* 评价段数 */
-.criterion-segs {
-  border-radius: 100rpx;
-  background-color: rgba(180, 237, 255, 0.3);
-  display: flex;
-  align-items: center;
+/* 选择菜单 */
+.folders {
+  height: 124rpx;
   position: relative;
 }
 
-.criterion-count {
-  padding: 20rpx 40rpx;
-  font-size: 28rpx;
-  color: black;
-  flex-grow: 1;
-  text-align: center;
-}
-
-.criterion-segs:before {
-  content: '';
+/* 父项目 */
+.parent-item {
   position: absolute;
-  height: 100%;
-  width: 48%;
-  background: #00C0FF;
-  border-radius: 100rpx;
-  transition: all .3s ease;
-  z-index: -1;
   left: 0;
-  box-shadow: rgba(0, 192, 255, 0.2) 9rpx 9rpx 16rpx;
+  width: 100%;
 }
 
-.criterion-right:before {
-  left: 52%;
+/* 子项目 */
+.sub-items {
+  position: absolute;
+  top: 0;
+  left: 750rpx;
+  width: 100%;
+  height: 124rpx;
 }
 
-.criterion-example {
-  text-align: center;
-  font-size: 28rpx;
-  padding: 40rpx;
-  animation: slide-in-bottom ease .3s;
+.sub-items .list-icon {
+  animation: scale-in ease .15s;
 }
+
+.sub-items .selected-item {
+  color: #00C0FF;
+}
+
+.selecting-folder {
+  height: 720rpx;
+}
+
+.selecting-folder .folders {
+  height: 424rpx;
+}
+
+.selecting-folder .parent-item {
+  left: -750rpx;
+}
+
+.selecting-folder .sub-items {
+  left: 0;
+  height: 424rpx;
+}
+
+/* 底部按钮 */
 
 .bottom-buttons {
   display: flex;
   justify-content: space-between;
-  margin-top: 60rpx;
   animation: slide-in-bottom .9s ease;
+  margin-top: 40rpx;
 }
 
 .bottom-button {
   width: 48%;
+}
+
+.animated {
+  transition: all ease .5s;
+  transition-delay: .15s;
 }

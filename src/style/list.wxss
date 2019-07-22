@@ -1,0 +1,21 @@
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40rpx 0;
+}
+
+.list-icon {
+  height: 44rpx;
+  width: 44rpx;
+}
+
+.list-head, .list-tail {
+  display: flex;
+  align-items: center;
+}
+
+.list-text {
+  margin-left: 40rpx;
+  font-size: 36rpx;
+}
