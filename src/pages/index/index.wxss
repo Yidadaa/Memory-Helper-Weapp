@@ -9,7 +9,7 @@
 .today-summary {
   margin-top: 40rpx;
   padding: 50rpx;
-  background-color: #eee;
+  background-color: rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
 }
@@ -17,24 +17,37 @@
 .summary-date {
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: 24rpx;
   font-weight: bold;
-  width: 30%;
+  width: 25%;
+  position: relative;
+}
+
+.date-bg {
+  opacity: 0.1;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  animation: rotate-360 10s linear infinite;
 }
 
 .summary-number-header {
   display: flex;
+  align-items: center;
+  opacity: 0.6;
+  margin-bottom: 14rpx;
 }
 
 .summary-number-title {
   font-size: 24rpx;
-  color: #9b9b9b;
+  margin-right: 4rpx;
+  padding-bottom: 2rpx;
 }
 
 .summary-number-icon {
   height: 24rpx;
   width: 24rpx;
-  background-color: #eee;
 }
 
 .summary-number-text {
@@ -42,10 +55,14 @@
   font-weight: bold;
 }
 
-.summary-minutes:after {
-  content: 'min';
+.summary-number-unit:after {
+  content: '张';
   font-size: 24rpx;
   margin-left: 5rpx;
+}
+
+.time-unit:after {
+  content: 'min'
 }
 
 /* 所有项目 */
@@ -57,36 +74,57 @@
 
 .content-block {
   padding: 40rpx;
-  background-color: #eee;
+  background-color: #00C0FF;
+  box-shadow: rgba(0, 192, 255, 0.2) 9rpx 9rpx 16rpx;
+  color: #fff;
   width: 300rpx;
   box-sizing: border-box;
   margin-bottom: 40rpx;
+  overflow: hidden;
+}
+
+.block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0.5;
+  padding-bottom: 60rpx;
+  padding-top: 40rpx;
+}
+
+.block-number {
+  font-size: 60rpx;
+  font-weight: bolder;
 }
 
 .block-icon {
-  height: 140rpx;
-  width: 140rpx;
-  background-color: #ddd;
+  height: 40rpx;
+  width: 40rpx;
+  transform: translateX(20rpx) translateY(-10rpx) scale(5);
 }
 
 .block-title {
   font-size: 28rpx;
   margin-top: 20rpx;
+  font-weight: bold;
 }
 
-.block-tags {
-  margin-top: 20rpx;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 24rpx;
-}
-
-.block-tag {
-  padding: 5rpx 20rpx;
-  background-color: #ddd;
+.block-progress {
+  height: 10rpx;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 50rpx;
-  margin-right: 10rpx;
-  margin-bottom: 10rpx;
+  margin-top: 20rpx;
+}
+
+.progress-bar {
+  width: 0;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50rpx;
+  transition: all ease .3s;
+  transform-origin: left center;
+  animation: scale-x-in 1s ease;
 }
 
 .block-tag:before {

@@ -21,7 +21,7 @@ Page({
   onCancelBtn (e) {
     wx.showModal({
       title: '提示',
-      content: '是否放弃编辑当前项目？',
+      content: '是否放弃编辑当前卡片？',
       success (res) {
         if (res.confirm) {
           wx.navigateBack()

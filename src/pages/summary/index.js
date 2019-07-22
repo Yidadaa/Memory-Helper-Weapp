@@ -32,6 +32,6 @@ Page({
         frequencyChartLoading: false
       })
       wx.stopPullDownRefresh()
-    }, 5000)
+    }, 1000)
   }
 })

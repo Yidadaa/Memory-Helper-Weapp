@@ -16,21 +16,22 @@
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
+    "selectedColor": "#00C0FF",
     "list": [{
       "pagePath": "pages/index/index",
       "text": "首页",
       "iconPath": "/imgs/home.png",
-      "selectedIconPath": "/imgs/home.png"
+      "selectedIconPath": "/imgs/home-primary.png"
     }, {
       "pagePath": "pages/summary/index",
       "text": "汇总",
       "iconPath": "/imgs/summary.png",
-      "selectedIconPath": "/imgs/summary.png"
+      "selectedIconPath": "/imgs/summary-primary.png"
     }, {
       "pagePath": "pages/setting/index",
       "text": "设置",
       "iconPath": "/imgs/setting.png",
-      "selectedIconPath": "/imgs/setting.png"
+      "selectedIconPath": "/imgs/setting-primary.png"
     }]
   }
 }

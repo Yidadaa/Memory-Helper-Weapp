@@ -46,11 +46,29 @@
   }
 }
 
+@keyframes scale-x-in {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes rotate-360 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

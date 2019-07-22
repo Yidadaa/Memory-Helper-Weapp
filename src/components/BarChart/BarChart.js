@@ -52,7 +52,7 @@ Component({
           this.setData({
             renderData: this._getRandomData()
           })
-        }, 1000)
+        }, 500)
       } else {
         this.setData({
           renderData: this._getRandomData()
