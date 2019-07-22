@@ -1,7 +1,10 @@
-<scroll-view class="bar-chart" scroll-x="{{!shouldBlur}}">
-  <view class="bar-content {{shouldBlur ? 'blur-bar' : ''}}" style="width: {{renderData.length * 20}}rpx;">
+<scroll-view class="bar-chart" scroll-x="{{!(noData || loading)}}">
+  <view class="bar-content {{(noData || loading) ? 'blur-bar' : ''}}" style="width: {{renderData.length * 20}}rpx;">
     <view class="bar" wx:for="{{renderData}}" wx:key="index"
       style="height: {{item}}%; transition-delay: {{index * 0.01}}s"></view>
   </view>
-  <view class="tips" wx:if="{{shouldBlur}}">{{ loading ? '正在加载' : noData ? '没有数据' : '' }}</view>
+  <view class="tips" wx:if="{{(noData || loading)}}">
+    <image src="/imgs/loading.svg" class="loading-icon" wx:if="{{loading}}"/>
+    <view wx:elif="{{noData}}">没有数据</view>
+  </view>
 </scroll-view>

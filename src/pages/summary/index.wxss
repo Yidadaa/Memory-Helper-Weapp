@@ -14,9 +14,7 @@
 
 /* 频率图表 */
 .frequency-chart {
-  background-color: #eee;
   border-radius: 20rpx;
-  height: 240rpx;
 }
 
 /* 卡片通用样式 */

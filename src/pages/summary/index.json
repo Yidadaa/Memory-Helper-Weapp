@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "bar-chart": "/components/BarChart/BarChart"
+    "bar-chart": "/components/BarChart/BarChart",
+    "dot-chart": "/components/DotChart/DotChart"
   },
   "enablePullDownRefresh": true,
   "backgroundColor": "#00C0FF"

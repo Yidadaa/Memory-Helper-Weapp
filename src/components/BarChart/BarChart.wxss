@@ -38,4 +38,10 @@
   top: 0;
   left: 0;
   font-weight: bold;
+  animation: fade-in 1s ease;
+}
+
+.loading-icon {
+  height: 60rpx;
+  width: 60rpx;
 }

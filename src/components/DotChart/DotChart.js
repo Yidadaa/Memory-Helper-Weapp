@@ -6,23 +6,28 @@ Component({
     },
     noData: {
       type: Boolean,
-      value: true
+      value: false
     },
     loading: {
       type: Boolean,
-      value: false
+      value: true
     }
   },
   data: {
-    renderData: new Array(40).fill(0),
-    firstRender: true
+    renderData: new Array(7).fill(0).map(() => new Array(40).fill(0).map(v => Math.random())),
+    firstRender: true,
+    weekStrs: ['MON', 'TUE', 'WED', 'THU', 'FIR', 'SAT', 'SUN']
   },
   methods: {
     onTap (e) {
       console.log(e)
     },
     _getRandomData () {
-      return new Array(40).fill(0).map(v => Math.random() * 100)
+      const today = new Date().getDay() - 1
+      const fakeData = new Array(7).fill(0).map((v, i) => {
+        return new Array(40 - (i > today)).fill(0).map(v => Math.random())
+      })
+      return fakeData
     }
   },
   observers: {

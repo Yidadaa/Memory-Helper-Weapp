@@ -15,7 +15,10 @@
         <view class="section-title">频率</view>
         <image class="header-btn" src="/imgs/share.png"></image>
       </view>
-      <view class="section-content frequency-chart"></view>
+      <view class="section-content frequency-chart">
+        <dot-chart data="{{frequencyChartData}}" loading="{{frequencyChartLoading}}"
+          no-data="{{frequencyChartNoData}}"></dot-chart>
+      </view>
     </view>
     <view class="section">
       <view class="section-header">
