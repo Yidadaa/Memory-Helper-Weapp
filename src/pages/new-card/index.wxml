@@ -18,7 +18,7 @@
         </view>
         <scroll-view class="sub-items animated" scroll-y="{{true}}">
           <view class="list-item ripple" wx:for="{{subItems}}" hover-class="ripple-on-hover"
-              bind:tap="onListItemTap" data-index="{{index}}">
+              bind:tap="onListItemTap" data-index="{{index}}" wx:key="{{index}}">
             <view class="list-header {{index === selectedIndex ? 'selected-item' : ''}}">{{item}}</view>
             <image class="list-tail list-icon" src="/imgs/ok-primary.svg" wx:if="{{index === selectedIndex}}"></image>
           </view>

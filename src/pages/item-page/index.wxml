@@ -53,7 +53,9 @@
       <navigator class="common-btn cancel-btn" open-type="navigateBack" hover-class="btn-on-hover">
         <image class="btn-icon" src="/imgs/arrow-back-white.svg"></image>
       </navigator>
-      <navigator class="common-btn primary-btn" url="/pages/new-card/index" hover-class="btn-on-hover">新建卡片</navigator>
+      <navigator class="common-btn primary-btn" url="/pages/new-card/index" hover-class="btn-on-hover">
+        <image class="btn-icon" src="/imgs/note-add-white.svg"></image>
+      </navigator>
     </view>
   </fixed-bottom>
 </view>
