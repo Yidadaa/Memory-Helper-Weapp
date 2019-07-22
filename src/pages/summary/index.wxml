@@ -13,7 +13,7 @@
     <view class="section">
       <view class="section-header">
         <view class="section-title">频率</view>
-        <image class="header-btn" src="/imgs/share.png"></image>
+        <image class="header-btn" src="/imgs/share.svg"></image>
       </view>
       <view class="section-content frequency-chart">
         <dot-chart data="{{frequencyChartData}}" loading="{{frequencyChartLoading}}"
@@ -31,9 +31,9 @@
             <view class="card-left">
               <view class="card-title">LeetCode题目精选</view>
               <view class="card-bottom">
-                <image class="card-icon" src="/imgs/folder.png"></image>
+                <image class="card-icon" src="/imgs/folder.svg"></image>
                 <view class="card-tips">15张卡片</view>
-                <image class="card-icon" src="/imgs/finish.png"></image>
+                <image class="card-icon" src="/imgs/finish.svg"></image>
                 <view class="card-tips">10张已掌握</view>
               </view>
             </view>
@@ -49,18 +49,18 @@
       <view class="section-content">
         <view class="card feed-card ripple" hover-class="ripple-on-hover" wx:for="{{cards}}" wx:key="index">
           <view class="card-header">
-            <image class="card-icon" src="/imgs/time.png"></image>
+            <image class="card-icon" src="/imgs/calendar.svg"></image>
             <view class="card-tips">2018/07/19 23:12</view>
           </view>
           <view class="card-content">
             <view class="card-title">122 - 买卖股票的最佳时机</view>
           </view>
           <view class="card-bottom">
-            <image class="card-icon" src="/imgs/folder.png"></image>
+            <image class="card-icon" src="/imgs/folder.svg"></image>
             <view class="card-tips">LeetCode题目精选</view>
-            <image class="card-icon" src="/imgs/finish.png"></image>
+            <image class="card-icon" src="/imgs/finish.svg"></image>
             <view class="card-tips">掌握</view>
-            <image class="card-icon" src="/imgs/repeat.png"></image>
+            <image class="card-icon" src="/imgs/flag.svg"></image>
             <view class="card-tips">尝试4次</view>
           </view>
         </view>

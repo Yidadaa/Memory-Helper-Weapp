@@ -14,38 +14,38 @@
   <view class="page-content page">
     <view class="list-item ripple" hover-class="ripple-on-hover">
       <view class="list-head">
-        <image class="list-icon" src="/imgs/export.png"></image>
+        <image class="list-icon" src="/imgs/export.svg"></image>
         <view class="list-text">数据导出</view>
       </view>
       <view class="list-tail">
-        <image class="list-icon" src="/imgs/right.png"></image>
+        <image class="list-icon" src="/imgs/right.svg"></image>
       </view>
     </view>
     <view class="list-item ripple" hover-class="ripple-on-hover">
       <view class="list-head">
-        <image class="list-icon" src="/imgs/donate.png"></image>
+        <image class="list-icon" src="/imgs/thumb-up.svg"></image>
         <view class="list-text">捐赠</view>
       </view>
       <view class="list-tail">
-        <image class="list-icon" src="/imgs/right.png"></image>
+        <image class="list-icon" src="/imgs/right.svg"></image>
       </view>
     </view>
     <view class="list-item ripple" hover-class="ripple-on-hover">
       <view class="list-head">
-        <image class="list-icon" src="/imgs/story.png"></image>
+        <image class="list-icon" src="/imgs/face.svg"></image>
         <view class="list-text">开发者故事</view>
       </view>
       <view class="list-tail">
-        <image class="list-icon" src="/imgs/right.png"></image>
+        <image class="list-icon" src="/imgs/right.svg"></image>
       </view>
     </view>
     <view class="list-item ripple" hover-class="ripple-on-hover">
       <view class="list-head">
-        <image class="list-icon" src="/imgs/feedback.png"></image>
+        <image class="list-icon" src="/imgs/feedback.svg"></image>
         <view class="list-text">建议反馈</view>
       </view>
       <view class="list-tail">
-        <image class="list-icon" src="/imgs/right.png"></image>
+        <image class="list-icon" src="/imgs/right.svg"></image>
       </view>
     </view>
   </view>

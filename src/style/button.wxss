@@ -3,11 +3,18 @@
   border-radius: 90rpx;
   color: #aaa;
   padding: 20rpx 60rpx;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #fff;
   box-shadow: rgba(0, 0, 9, 0.1) 4rpx 4rpx 16rpx;
   transition: all ease .2s;
   box-sizing: border-box;
+}
+
+.common-btn .btn-icon {
+  height: 40rpx;
+  width: 40rpx;
 }
 
 .primary-btn {

@@ -9,12 +9,12 @@
     <view class="edit-section">
       <view class="edit-header">
         <view class="edit-title">所属项目</view>
-        <image src="/imgs/folder.png" class="edit-icon"/>
+        <image src="/imgs/folder.svg" class="edit-icon"/>
       </view>
       <view class="folders animated">
         <view class="parent-item list-item ripple animated" hover-class="ripple-on-hover" bind:tap="onListTap">
           <view class="list-header">{{subItems[selectedIndex] || ''}}</view>
-          <image class="list-tail list-icon" src="/imgs/right.png"></image>
+          <image class="list-tail list-icon" src="/imgs/right.svg"></image>
         </view>
         <scroll-view class="sub-items animated" scroll-y="{{true}}">
           <view class="list-item ripple" wx:for="{{subItems}}" hover-class="ripple-on-hover"
@@ -26,8 +26,12 @@
       </view>
     </view>
     <view class="bottom-buttons">
-      <view class="bottom-button common-btn cancel-btn" hover-class="btn-on-hover" bind:tap="onCancelBtn">放弃编辑</view>
-      <view class="bottom-button common-btn primary-btn" hover-class="btn-on-hover">保存项目</view>
+        <view class="bottom-button common-btn cancel-btn" hover-class="btn-on-hover" bind:tap="onCancelBtn">
+          <image src="/imgs/arrow-back-white.svg" class="btn-icon"/>
+        </view>
+        <view class="bottom-button common-btn primary-btn" hover-class="btn-on-hover">
+          <image src="/imgs/save-white.svg" class="btn-icon"/>
+        </view>
     </view>
   </view>
 </view>

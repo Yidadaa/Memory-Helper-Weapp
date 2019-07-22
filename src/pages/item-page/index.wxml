@@ -3,11 +3,11 @@
     <view class="item-date-range">2018 / 07 / 01 - 2018 / 07 / 20</view>
     <view class="page-title">{{itemTitle}}</view>
     <view class="item-info">
-      <image class="item-icon" src="/imgs/folder.png"></image>
+      <image class="item-icon" src="/imgs/folder-white.svg"></image>
       <view class="item-text">15张卡片</view>
-      <image class="item-icon" src="/imgs/finish.png"></image>
+      <image class="item-icon" src="/imgs/finish-white.svg"></image>
       <view class="item-text">10张已完成</view>
-      <image class="item-icon" src="/imgs/time.png"></image>
+      <image class="item-icon" src="/imgs/timelapse-white.svg"></image>
       <view class="item-text">预计10天完成</view>
     </view>
   </view>
@@ -15,7 +15,7 @@
     <view class="section">
       <view class="section-header">
         <view class="section-title">频率</view>
-        <image class="header-btn" src="/imgs/share.png"></image>
+        <image class="header-btn" src="/imgs/share.svg"></image>
       </view>
       <view class="section-content frequency-chart">
         <dot-chart data="{{frequencyChartData}}" loading="{{frequencyChartLoading}}"
@@ -29,7 +29,7 @@
       <view class="section-content">
         <view class="card feed-card ripple" hover-class="ripple-on-hover" wx:for="{{cards}}" wx:key="index">
           <view class="card-header">
-            <image class="card-icon" src="/imgs/time.png"></image>
+            <image class="card-icon" src="/imgs/calendar.svg"></image>
             <view class="card-tips">2018/07/19 23:12</view>
           </view>
           <view class="card-content">
@@ -37,11 +37,11 @@
             <view class="card-text">只需要选择基色的亮度和饱和度值与混合色进行混合而创建的效果，混合后的亮度及饱和度取决于基色，但色相取决于混合色</view>
           </view>
           <view class="card-bottom">
-            <image class="card-icon" src="/imgs/folder.png"></image>
+            <image class="card-icon" src="/imgs/folder.svg"></image>
             <view class="card-tips">LeetCode题目精选</view>
-            <image class="card-icon" src="/imgs/finish.png"></image>
+            <image class="card-icon" src="/imgs/face-vsat.svg"></image>
             <view class="card-tips">掌握</view>
-            <image class="card-icon" src="/imgs/repeat.png"></image>
+            <image class="card-icon" src="/imgs/flag.svg"></image>
             <view class="card-tips">重复10次</view>
           </view>
         </view>
@@ -50,7 +50,9 @@
   </view>
   <fixed-bottom id="fixed-bottom">
     <view class="bottom-buttons page">
-      <navigator class="common-btn cancel-btn" open-type="navigateBack" hover-class="btn-on-hover">返回上层</navigator>
+      <navigator class="common-btn cancel-btn" open-type="navigateBack" hover-class="btn-on-hover">
+        <image class="btn-icon" src="/imgs/arrow-back-white.svg"></image>
+      </navigator>
       <navigator class="common-btn primary-btn" url="/pages/new-card/index" hover-class="btn-on-hover">新建卡片</navigator>
     </view>
   </fixed-bottom>

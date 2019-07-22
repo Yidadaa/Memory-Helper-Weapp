@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/new-card/index",
     "pages/index/index",
+    "pages/new-card/index",
     "pages/item-page/index",
     "pages/summary/index",
     "pages/new-item/index",
@@ -19,18 +19,18 @@
     "list": [{
       "pagePath": "pages/index/index",
       "text": "首页",
-      "iconPath": "/imgs/home-outline.png",
-      "selectedIconPath": "/imgs/home-outline.png"
+      "iconPath": "/imgs/home.png",
+      "selectedIconPath": "/imgs/home.png"
     }, {
       "pagePath": "pages/summary/index",
       "text": "汇总",
-      "iconPath": "/imgs/poll-box.png",
-      "selectedIconPath": "/imgs/poll-box.png"
+      "iconPath": "/imgs/summary.png",
+      "selectedIconPath": "/imgs/summary.png"
     }, {
       "pagePath": "pages/setting/index",
       "text": "设置",
-      "iconPath": "/imgs/settings-outline.png",
-      "selectedIconPath": "/imgs/settings-outline.png"
+      "iconPath": "/imgs/setting.png",
+      "selectedIconPath": "/imgs/setting.png"
     }]
   }
 }
