@@ -27,7 +27,9 @@
         <view class="section-title">卡片</view>
       </view>
       <view class="section-content">
-        <view class="card feed-card ripple" hover-class="ripple-on-hover" wx:for="{{cards}}" wx:key="index">
+        <view class="card feed-card ripple"
+            hover-class="ripple-on-hover" wx:for="{{cards}}" wx:key="index"
+            data-index="{{index}}" bind:tap="onCardTap" id="feed-card-{{index}}">
           <view class="card-header">
             <image class="card-icon" src="/imgs/calendar.svg"></image>
             <view class="card-tips">2018/07/19 23:12</view>
@@ -49,7 +51,7 @@
     </view>
   </view>
   <fixed-bottom id="fixed-bottom">
-    <view class="bottom-buttons page">
+    <view class="page bottom-buttons">
       <navigator class="common-btn cancel-btn" open-type="navigateBack" hover-class="btn-on-hover">
         <image class="btn-icon" src="/imgs/arrow-back-white.svg"></image>
       </navigator>
@@ -58,4 +60,23 @@
       </navigator>
     </view>
   </fixed-bottom>
+  <view class="card feed-card fixed-card {{shouldFlyCard ? 'should-fly' : ''}} {{shouldShowCard ? 'enable-transition' : ''}}"
+      style="top: {{cardTopOffset}}px; margin: 0 {{cardLeftOffset}}px; height: {{cardHeight}}px;" bind:tap="onCardClose">
+    <view class="card-header">
+      <image class="card-icon" src="/imgs/calendar.svg"></image>
+      <view class="card-tips">2018/07/19 23:12</view>
+    </view>
+    <view class="card-content">
+      <view class="card-title">122 - 买卖股票的最佳时机</view>
+      <view class="card-text">只需要选择基色的亮度和饱和度值与混合色进行混合而创建的效果，混合后的亮度及饱和度取决于基色，但色相取决于混合色</view>
+    </view>
+    <view class="card-bottom">
+      <image class="card-icon" src="/imgs/folder.svg"></image>
+      <view class="card-tips">LeetCode题目精选</view>
+      <image class="card-icon" src="/imgs/face-vsat.svg"></image>
+      <view class="card-tips">掌握</view>
+      <image class="card-icon" src="/imgs/flag.svg"></image>
+      <view class="card-tips">重复10次</view>
+    </view>
+  </view>
 </view>

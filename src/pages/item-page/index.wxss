@@ -37,10 +37,51 @@
 
 .progress-card, .feed-card {
   margin-bottom: 40rpx;
+  background-color: #fff;
 }
 
 .progress-card:last-child, .feed-card:last-child {
   margin-bottom: 0;
+}
+
+.fixed-card {
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  visibility: hidden;
+}
+
+.fixed-card .card-title,
+.fixed-card .card-text {
+  transition: all ease .5s;
+}
+
+.enable-transition {
+  transition: all ease .5s;
+}
+
+.should-fly {
+  height: 100%!important;
+  top: 0!important;
+  margin: 0!important;
+  pointer-events: all;
+  visibility: visible;
+  border-radius: 0;
+  padding: 160rpx 54rpx 0 54rpx;
+}
+
+.should-fly .card-content {
+  height: 50%;
+}
+
+.should-fly .card-title {
+  font-size: 56rpx;
+}
+
+.should-fly .card-text {
+  font-size: 36rpx;
 }
 
 .bottom-buttons {
@@ -50,6 +91,7 @@
   justify-content: space-between;
   margin-bottom: 40rpx;
   animation: slide-in-bottom .5s ease;
+  padding-top: 0;
 }
 
 .bottom-buttons .common-btn {
