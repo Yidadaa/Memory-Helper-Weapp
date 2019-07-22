@@ -81,6 +81,7 @@
   box-sizing: border-box;
   margin-bottom: 40rpx;
   overflow: hidden;
+  animation: slide-in-left ease .5s backwards;
 }
 
 .block-header {

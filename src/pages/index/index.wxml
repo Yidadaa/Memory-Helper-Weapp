@@ -37,7 +37,7 @@
     </view>
     <view class="section-content all-items">
       <navigator class="content-block with-radius" wx:for="{{items}}" wx:key="index" url="/pages/item-page/index"
-          style="background-color: {{item.color}}; box-shadow: 9rpx 9rpx 16rpx {{item.shadowColor}};">
+          style="background-color: {{item.color}}; box-shadow: 9rpx 9rpx 16rpx {{item.shadowColor}}; animation-delay: {{index * 0.1}}s">
         <view class="block-header">
           <view class="block-number">{{item.number}}</view>
           <image class="block-icon" src="{{item.icon}}"/>
@@ -51,7 +51,7 @@
   </view>
   <fixed-bottom id="fixed-bottom">
     <view class="btn-container">
-      <view class="common-btn primary-btn" hover-class="btn-on-hover">开始复习</view>
+      <navigator class="common-btn primary-btn" hover-class="btn-on-hover" url="/pages/study-page/index">开始复习</navigator>
     </view>
   </fixed-bottom>
 </view>
