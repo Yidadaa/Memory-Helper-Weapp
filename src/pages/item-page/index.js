@@ -9,13 +9,15 @@ Page({
     frequencyChartNoData: false,
 
     // 卡片信息
-    cards: new Array(5).fill(0),
-    displayCardIndex: -1,
-    shouldShowCard: false,
-    shouldFlyCard: false,
-    cardLeftOffset: 0,
-    cardTopOffset: 0,
-    cardHeight: 0
+    cards: new Array(5).fill({
+      date: '2018/07/19 23:00',
+      title: '122 - 股票买入的最佳时机',
+      content: '只需要选择基色的亮度和饱和度值与混合色进行混合而创建的效果，混合后的亮度及饱和度取决于基色，但色相取决于混合色',
+      folder: 'LeetCode题目精选',
+      status: '掌握',
+      times: '10'
+    }),
+    displayCardIndex: -1
   },
 
   onLoad () {
@@ -31,34 +33,14 @@ Page({
   },
 
   onCardTap (e) {
-    const target = e.currentTarget
-    wx.createSelectorQuery().select(`#${target.id}`).boundingClientRect().exec(res => {
-      res = res[0]
-      this.setData({
-        displayCardIndex: target.dataset.index,
-        shouldShowCard: true,
-        shouldFlyCard: false,
-        cardLeftOffset: res.left,
-        cardTopOffset: res.top,
-        cardHeight: res.height
-      })
-      this.thenFly()
-    })
-  },
-
-  thenFly () {
-    setTimeout(() => {
-      this.setData({
-        shouldShowCard: true,
-        shouldFlyCard: true
-      })
-    }, 300);
-  },
-
-  onCardClose () {
+    const index = e.currentTarget.dataset.index
     this.setData({
-      shouldFlyCard: false
+      displayCardIndex: index === this.data.displayCardIndex ? -1: index
     })
+  },
+
+  onCardFly (e) {
+    console.log(e)
   },
 
   loadData () {

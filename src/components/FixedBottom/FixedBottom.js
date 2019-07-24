@@ -1,19 +1,26 @@
 Component({
+  properties: {
+    show: {
+      type: Boolean,
+      value: true
+    }
+  },
+
   data: {
     lastPageY: 0,
-    show: true
+    shouldShow: true
   },
 
   methods: {
     onPageScroll (e) {
-      const curY = e.scrollTop
+      const curY = e.scrollTop || (e.detail && e.detail.scrollTop) || 0
       const delta = curY - this.data.lastPageY
       this.setData({
         lastPageY: curY
       })
-      if ((delta < 0) !== this.data.show) {
+      if ((delta < 0) !== this.data.shouldShow) {
         this.setData({
-          show: delta < 0
+          shouldShow: delta < 0
         })
       }
     }

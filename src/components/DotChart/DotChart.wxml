@@ -1,5 +1,5 @@
-<scroll-view class="dot-chart" scroll-x="{{!(noData || loading)}}" scroll-with-animation="{{true}}"
-    scroll-left="{{(noData || loading) ? 0 : renderData[0].length * 35 + 35}}rpx">
+<scroll-view class="dot-chart {{isFly ? 'fly-chart page' : ''}}" scroll-x="{{!(noData || loading)}}" scroll-with-animation="{{true}}"
+    scroll-left="{{(noData || loading) ? 100 : renderData[0].length * 35 + 35}}rpx" bind:tap="onTap" style="{{flyAnimation}}">
   <view class="dot-content {{(noData || loading) ? 'blur-dot' : ''}}" style="width: {{renderData[0].length * 35 + 35}}rpx;">
     <view class="dot-line" wx:for="{{renderData}}" wx:key="index">
       <view class="dots">

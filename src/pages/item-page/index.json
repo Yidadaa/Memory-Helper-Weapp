@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "dot-chart": "/components/DotChart/DotChart",
-    "fixed-bottom": "/components/FixedBottom/FixedBottom"
+    "fixed-bottom": "/components/FixedBottom/FixedBottom",
+    "feed-card": "/components/FeedCard/FeedCard"
   },
   "enablePullDownRefresh": true,
   "backgroundColor": "#00C0FF"

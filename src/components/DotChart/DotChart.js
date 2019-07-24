@@ -1,4 +1,6 @@
 Component({
+  behaviors: [require('../../behaviors/FlyPage')],
+
   properties: {
     data: {
       type: Array,
@@ -16,11 +18,15 @@ Component({
   data: {
     renderData: new Array(7).fill(0).map(() => new Array(40).fill(0).map(v => Math.random())),
     firstRender: true,
-    weekStrs: ['MON', 'TUE', 'WED', 'THU', 'FIR', 'SAT', 'SUN']
+    weekStrs: ['MON', 'TUE', 'WED', 'THU', 'FIR', 'SAT', 'SUN'],
+    flySelector: '.dot-chart'
   },
   methods: {
     onTap (e) {
-      console.log(e)
+      console.log(e, this.data)
+      this.setData({
+        shouldFly: !this.data.shouldFly
+      })
     },
     _getRandomData () {
       const today = new Date().getDay() - 1

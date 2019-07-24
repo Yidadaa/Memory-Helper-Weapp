@@ -1,30 +1,7 @@
 /**app.wxss**/
 @import '/style/button.wxss';
-
-/* 定义页面的通用布局样式 */
-.page {
-  padding: 160rpx 54rpx 0 54rpx;
-}
-
-.page-header {
-  background-color: #00C0FF;
-  color: #fff;
-  padding-bottom: 100rpx;
-}
-
-.page-title {
-  font-size: 56rpx;
-  font-weight: bold;
-}
-
-.page-content {
-  padding-top: 2rpx;
-  border-top-left-radius: 40rpx;
-  border-top-right-radius: 40rpx;
-  position: relative;
-  top: -50rpx;
-  background-color: #fff;
-}
+@import '/style/ripple.wxss';
+@import '/style/page.wxss';
 
 /* 页面内容段的样式 */
 .section {
@@ -54,29 +31,4 @@
 /* 为卡片添加圆角 */
 .with-radius {
   border-radius: 40rpx;
-}
-
-/* 涟漪动画 */
-.ripple {
-  position: relative;
-  overflow: hidden;
-}
-
-.ripple:before {
-  content: '';
-  position: absolute;
-  width: 10rpx;
-  height: 10rpx;
-  border-radius: 900rpx;
-  background-color: rgba(0, 0, 0, 0.05);
-  left: 50%;
-  top: 50%;
-  transition: all ease .5s;
-  opacity: 0;
-  transform: scale(0);
-}
-
-.ripple-on-hover:before {
-  opacity: 1;
-  transform: scale(100);
 }

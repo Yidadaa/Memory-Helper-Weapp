@@ -1,9 +1,17 @@
 @import '/style/animation.wxss';
+@import '/style/page.wxss';
 
 .dot-chart {
   height: 240rpx;
   width: 100%;
   position: relative;
+  background-color: #fff;
+  transform: rotate(0);
+  transition: transform .5s ease;
+}
+
+.fly-chart {
+  transform: rotate(90deg);
 }
 
 .dot-content {
