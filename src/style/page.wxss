@@ -1,0 +1,23 @@
+.page {
+  padding: 160rpx 54rpx 0 54rpx;
+}
+
+.page-header {
+  background-color: #00C0FF;
+  color: #fff;
+  padding-bottom: 100rpx;
+}
+
+.page-title {
+  font-size: 56rpx;
+  font-weight: bold;
+}
+
+.page-content {
+  padding-top: 2rpx;
+  border-top-left-radius: 40rpx;
+  border-top-right-radius: 40rpx;
+  position: relative;
+  top: -50rpx;
+  background-color: #fff;
+}
