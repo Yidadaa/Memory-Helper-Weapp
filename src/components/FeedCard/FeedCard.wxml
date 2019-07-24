@@ -1,0 +1,18 @@
+<view class="card feed-card {{isFly ? 'page' : ''}}" style="{{flyAnimation}}">
+  <view class="card-header">
+    <image class="card-icon" src="/imgs/calendar.svg"></image>
+    <view class="card-tips">{{date}}</view>
+  </view>
+  <view class="card-content">
+    <view class="card-title">{{title}}</view>
+    <view class="card-text">{{content}}</view>
+  </view>
+  <view class="card-bottom">
+    <image class="card-icon" src="/imgs/folder.svg"></image>
+    <view class="card-tips">{{folder}}</view>
+    <image class="card-icon" src="/imgs/face-vsat.svg"></image>
+    <view class="card-tips">{{status}}</view>
+    <image class="card-icon" src="/imgs/flag.svg"></image>
+    <view class="card-tips">{{times}}</view>
+  </view>
+</view>

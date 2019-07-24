@@ -1,0 +1,10 @@
+@import '/style/card.wxss';
+@import '/style/ripple.wxss';
+@import '/style/page.wxss';
+
+.feed-card {
+  margin-bottom: 40rpx;
+  background-color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
