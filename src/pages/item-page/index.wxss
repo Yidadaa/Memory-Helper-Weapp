@@ -6,6 +6,10 @@
   background-color: #00C0FF;
 }
 
+.page-content {
+  padding-bottom: 50rpx;
+}
+
 .top-loading {
   color: #fff;
   display: flex;
@@ -39,25 +43,14 @@
   margin-right: 30rpx;
 }
 
-/* 进度卡片和动态卡片的样式 */
-.progress-card {
-  justify-content: space-between;
-}
-
-.progress-card .card-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.progress-card, .feed-card {
-  margin-bottom: 40rpx;
+.feed-card {
   background-color: #fff;
   width: 100%;
   box-sizing: border-box;
+  margin-bottom: 40rpx;
 }
 
-.progress-card:last-child {
+.feed-card:last-child {
   margin-bottom: 0;
 }
 

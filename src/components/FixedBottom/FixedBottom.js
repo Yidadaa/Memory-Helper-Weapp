@@ -18,9 +18,10 @@ Component({
       this.setData({
         lastPageY: curY
       })
-      if ((delta < 0) !== this.data.shouldShow) {
+      const newShouldShow = delta < 0
+      if (newShouldShow !== this.data.shouldShow) {
         this.setData({
-          shouldShow: delta < 0
+          shouldShow: newShouldShow
         })
       }
     }

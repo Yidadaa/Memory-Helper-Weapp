@@ -33,9 +33,10 @@
           <view class="section-title">卡片</view>
         </view>
         <view class="section-content">
-          <feed-card wx:for="{{cards}}" wx:key="index" data-index="{{index}}" bind:tap="onCardTap"
-            title="{{item.title}}" date="{{item.date}}" content="{{item.content}}" folder="{{item.folder}}"
-            status="{{item.status}}" times="{{item.times}}" should-fly="{{index === displayCardIndex}}"></feed-card>
+          <view class="feed-card" wx:for="{{cards}}" wx:key="index" data-index="{{index}}" bind:tap="onCardTap">
+            <feed-card title="{{item.title}}" date="{{item.date}}" content="{{item.content}}" folder="{{item.folder}}"
+              status="{{item.status}}" times="{{item.times}}" should-fly="{{index === displayCardIndex}}"></feed-card>
+          </view>
         </view>
       </view>
     </view>

@@ -19,5 +19,4 @@
   border-top-right-radius: 40rpx;
   margin-top: -50rpx;
   background-color: #fff;
-  overflow: auto;
 }
