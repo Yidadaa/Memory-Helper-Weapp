@@ -1,64 +1,60 @@
-<view class="root-page">
-  <scroll-view scroll-y="{{displayCardIndex < 0}}" style="position: absolute; height: 100%"
-    bind:scroll="onPageScroll" bind:touchstart="onTopGestureStart" bind:touchend="onTopGestureEnd"
-    bind:touchmove="onTopGestureMove" style="transform: translateY({{TopNumber * 200}}px); transition: all .5s;">
-    <view class="top-loading" style="transform: translateY({{-TopNumber * 80}}px); transition: all .5s;">
-      <span>正在刷新</span>
+
+<scroll-view scroll-y="{{displayCardIndex < 0 && TopNumber === 0}}" class="scroll-page"
+  bind:scroll="onPageScroll" bind:touchstart="onTopGestureStart" bind:touchend="onTopGestureEnd"
+  bind:touchmove="onTopGestureMove">
+  <view class="page-header page">
+    <view class="item-date-range">2018 / 07 / 01 - 2018 / 07 / 20</view>
+    <view class="page-title">{{itemTitle}}</view>
+    <view class="item-info">
+      <image class="item-icon" src="/imgs/folder-white.svg"></image>
+      <view class="item-text">15张卡片</view>
+      <image class="item-icon" src="/imgs/finish-white.svg"></image>
+      <view class="item-text">10张已完成</view>
+      <image class="item-icon" src="/imgs/timelapse-white.svg"></image>
+      <view class="item-text">预计10天完成</view>
     </view>
-    <view class="page-header page">
-      <view class="item-date-range">2018 / 07 / 01 - 2018 / 07 / 20</view>
-      <view class="page-title">{{itemTitle}}</view>
-      <view class="item-info">
-        <image class="item-icon" src="/imgs/folder-white.svg"></image>
-        <view class="item-text">15张卡片</view>
-        <image class="item-icon" src="/imgs/finish-white.svg"></image>
-        <view class="item-text">10张已完成</view>
-        <image class="item-icon" src="/imgs/timelapse-white.svg"></image>
-        <view class="item-text">预计10天完成</view>
+  </view>
+  <view class="page-content page" style="transform: translateY({{TopNumber * 100}}rpx); transition: all ease .5s;">
+    <view class="section">
+      <view class="section-header">
+        <view class="section-title">频率</view>
+        <image class="header-btn" src="/imgs/share.svg"></image>
+      </view>
+      <view class="section-content frequency-chart">
+        <dot-chart data="{{frequencyChartData}}" loading="{{frequencyChartLoading}}" left="{{TopNumber}}"
+          no-data="{{frequencyChartNoData}}"></dot-chart>
       </view>
     </view>
-    <view class="page-content page">
-      <view class="section">
-        <view class="section-header">
-          <view class="section-title">频率</view>
-          <image class="header-btn" src="/imgs/share.svg"></image>
-        </view>
-        <view class="section-content frequency-chart">
-          <dot-chart data="{{frequencyChartData}}" loading="{{frequencyChartLoading}}"
-            no-data="{{frequencyChartNoData}}"></dot-chart>
-        </view>
+    <view class="section">
+      <view class="section-header">
+        <view class="section-title">卡片</view>
       </view>
-      <view class="section">
-        <view class="section-header">
-          <view class="section-title">卡片</view>
-        </view>
-        <view class="section-content">
-          <view class="feed-card" wx:for="{{cards}}" wx:key="index" data-index="{{index}}" bind:tap="onCardTap">
-            <feed-card title="{{item.title}}" date="{{item.date}}" content="{{item.content}}" folder="{{item.folder}}"
-              status="{{item.status}}" times="{{item.times}}" should-fly="{{index === displayCardIndex}}"></feed-card>
-          </view>
+      <view class="section-content">
+        <view class="feed-card" wx:for="{{cards}}" wx:key="index" data-index="{{index}}" bind:tap="onCardTap">
+          <feed-card title="{{item.title}}" date="{{item.date}}" content="{{item.content}}" folder="{{item.folder}}"
+            status="{{item.status}}" times="{{item.times}}" should-fly="{{index === displayCardIndex}}"></feed-card>
         </view>
       </view>
     </view>
-  </scroll-view>
-  <fixed-bottom id="fixed-bottom" show="{{displayCardIndex < 0}}">
-    <view class="page bottom-buttons">
-      <navigator class="common-btn cancel-btn" open-type="navigateBack" hover-class="btn-on-hover">
-        <image class="btn-icon" src="/imgs/arrow-back-white.svg"></image>
-      </navigator>
-      <navigator class="common-btn primary-btn" url="/pages/new-card/index" hover-class="btn-on-hover">
-        <image class="btn-icon" src="/imgs/note-add-white.svg"></image>
-      </navigator>
+  </view>
+</scroll-view>
+<fixed-bottom id="fixed-bottom" show="{{displayCardIndex < 0}}">
+  <view class="page bottom-buttons">
+    <navigator class="common-btn cancel-btn" open-type="navigateBack" hover-class="btn-on-hover">
+      <image class="btn-icon" src="/imgs/arrow-back-white.svg"></image>
+    </navigator>
+    <navigator class="common-btn primary-btn" url="/pages/new-card/index" hover-class="btn-on-hover">
+      <image class="btn-icon" src="/imgs/note-add-white.svg"></image>
+    </navigator>
+  </view>
+</fixed-bottom>
+<fixed-bottom id="fixed-bottom" show="{{displayCardIndex >= 0}}">
+  <view class="page bottom-buttons">
+    <view class="common-btn cancel-btn" bind:tap="hideFlyCard" hover-class="btn-on-hover">
+      <image class="btn-icon" src="/imgs/arrow-back-white.svg"></image>
     </view>
-  </fixed-bottom>
-  <fixed-bottom id="fixed-bottom" show="{{displayCardIndex >= 0}}">
-    <view class="page bottom-buttons">
-      <view class="common-btn cancel-btn" bind:tap="hideFlyCard" hover-class="btn-on-hover">
-        <image class="btn-icon" src="/imgs/arrow-back-white.svg"></image>
-      </view>
-      <navigator class="common-btn edit-btn" url="/pages/new-card/index" hover-class="btn-on-hover">
-        <image class="btn-icon" src="/imgs/edit-white.svg"></image>
-      </navigator>
-    </view>
-  </fixed-bottom>
-</view>
+    <navigator class="common-btn edit-btn" url="/pages/new-card/index" hover-class="btn-on-hover">
+      <image class="btn-icon" src="/imgs/edit-white.svg"></image>
+    </navigator>
+  </view>
+</fixed-bottom>

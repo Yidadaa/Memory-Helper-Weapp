@@ -38,11 +38,12 @@ Component({
     },
   
     onPageScroll (e) {
-      if (!this.data.enableTopGesture && e.scrollTop < 10) {
+      console.log(e.detail.scrollTop)
+      if (!this.data.enableTopGesture && e.detail.scrollTop < 100) {
         this.setData({
           enableTopGesture: true
         })
-      } else if (this.data.enableTopGesture && e.scrollTop > 10) {
+      } else if (this.data.enableTopGesture && e.detail.scrollTop > 50) {
         this.setData({
           enableTopGesture: false
         })
@@ -53,7 +54,8 @@ Component({
     onCardTap (e) {
       const index = e.currentTarget.dataset.index
       this.setData({
-        displayCardIndex: index === this.data.displayCardIndex ? -1: index
+        displayCardIndex: index === this.data.displayCardIndex ? -1: index,
+        enableTopGesture: index === this.data.displayCardIndex
       })
     },
 

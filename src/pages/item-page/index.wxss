@@ -2,23 +2,21 @@
 @import '/style/button.wxss';
 @import '/style/animation.wxss';
 
-.root-page {
-  background-color: #00C0FF;
+.scroll-page {
+  position: absolute;
+  height: 100%;
 }
 
 .page-content {
   padding-bottom: 50rpx;
 }
 
-.top-loading {
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40rpx 0;
-  position: fixed;
-  top: -120rpx;
-  width: 100%;
+.page-header {
+  padding-bottom: 200rpx;
+}
+
+.page-content {
+  margin-top: -150rpx;
 }
 
 .item-date-range {

@@ -13,6 +13,10 @@ Component({
     loading: {
       type: Boolean,
       value: true
+    },
+    left: {
+      type: Number,
+      value: 0
     }
   },
   data: {
