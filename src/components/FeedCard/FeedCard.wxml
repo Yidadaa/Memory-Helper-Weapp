@@ -1,4 +1,4 @@
-<view class="card feed-card {{isFly ? 'page' : ''}}" style="{{flyAnimation}}">
+<view class="card feed-card {{isFlying ? 'page' : ''}}" style="{{flyAnimation}}">
   <view class="card-header">
     <image class="card-icon" src="/imgs/calendar.svg"></image>
     <view class="card-tips">{{date}}</view>

@@ -1,4 +1,13 @@
-Page({
+import GestureLogic from '../../behaviors/GestureLogic'
+
+Component({
+  behaviors: [GestureLogic({
+    gestureID: 'Top',
+    threshold: 200,
+    endFuncName: 'refresh',
+    direction: 'toBottom'
+  })],
+
   data: {
     itemTitle: 'LeetCode题目精选',
     summaryChartArray: [],
@@ -20,45 +29,50 @@ Page({
     displayCardIndex: -1
   },
 
-  onLoad () {
-    this.loadData()
-  },
-
-  onPullDownRefresh () {
-    this.loadData()
-  },
-
-  onPageScroll (e) {
-    this.selectComponent('#fixed-bottom').onPageScroll(e)
-  },
-
-  onCardTap (e) {
-    const index = e.currentTarget.dataset.index
-    this.setData({
-      displayCardIndex: index === this.data.displayCardIndex ? -1: index
-    })
-  },
-
-  hideFlyCard (e) {
-    this.setData({
-      displayCardIndex: -1
-    })
-  },
-
-  loadData () {
-    if (this.data.summaryChartLoading) return
-    this.setData({
-      summaryChartLoading: true,
-      frequencyChartLoading: true
-    })
-    setTimeout(() => {
+  methods: {
+    onLoad () {
+      this.loadData()
       this.setData({
-        summaryChartNoData: Math.random() > 0.5,
-        summaryChartLoading: false,
-        frequencyChartNoData: Math.random() > 1,
-        frequencyChartLoading: false
+        enableTopGesture: true
       })
-      wx.stopPullDownRefresh()
-    }, 1000)
+    },
+  
+    onPageScroll (e) {
+      this.selectComponent('#fixed-bottom').onPageScroll(e)
+    },
+  
+    onCardTap (e) {
+      const index = e.currentTarget.dataset.index
+      this.setData({
+        displayCardIndex: index === this.data.displayCardIndex ? -1: index
+      })
+    },
+
+    refresh () {
+      this.loadData(this.resetTopGesture.bind(this))
+    },
+
+    hideFlyCard (e) {
+      this.setData({
+        displayCardIndex: -1
+      })
+    },
+  
+    loadData (cb) {
+      if (this.data.summaryChartLoading) return
+      this.setData({
+        summaryChartLoading: true,
+        frequencyChartLoading: true
+      })
+      setTimeout(() => {
+        this.setData({
+          summaryChartNoData: Math.random() > 0.5,
+          summaryChartLoading: false,
+          frequencyChartNoData: Math.random() > 1,
+          frequencyChartLoading: false
+        })
+        cb && cb()
+      }, 1000)
+    }
   }
 })

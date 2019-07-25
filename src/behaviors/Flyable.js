@@ -1,3 +1,20 @@
+/**
+ * @file: 提供一个可飞出的行为
+ * @example:
+ *  // wxs
+ *  Component({
+ *    behaviors: [require('path/to/Flyable')],
+ *    data: {
+ *      flySelector: 'flyable-card' # 执行飞出动画的组件
+ *    }
+ *  })
+ * 
+ *  // wxml
+ *  <view class="flyable-card {{isFlying ? 'flying' : ''}}" style="{{flyAnimation}}"></view>
+ * 
+ *  此行为会为组件注入shouldFly的prop，传入shouldFly即可控制组件的飞出状态，同时在wxml里可以使用isFlying控制渲染
+ */
+
 module.exports = Behavior({
   properties: {
     shouldFly: {
@@ -7,7 +24,7 @@ module.exports = Behavior({
   },
 
   data: {
-    isFly: false,
+    isFlying: false,
     // 飞出页面的原始位移，高度等信息
     topOffset: 0,
     leftOffset: 0,
@@ -22,7 +39,7 @@ module.exports = Behavior({
 
   observers: {
     'shouldFly': function (shouldFly) {
-      if (shouldFly === this.data.isFly) return
+      if (shouldFly === this.data.isFlying) return
       shouldFly ? this.flyIt() : this.closeIt()
     }
   },
@@ -32,7 +49,7 @@ module.exports = Behavior({
       this.createSelectorQuery().select(this.data.flySelector).boundingClientRect().exec(res => {
         res = res[0]
         this.setData({
-          isFly: true,
+          isFlying: true,
           topOffset: res.top,
           leftOffset: res.left,
           contentHeight: res.height,
@@ -44,7 +61,7 @@ module.exports = Behavior({
 
     closeIt (e) {
       this.setData({
-        isFly: false,
+        isFlying: false,
         flyAnimation: this.data.flyBackAnimation
       })
     },

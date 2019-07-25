@@ -17,7 +17,7 @@
   padding-top: 2rpx;
   border-top-left-radius: 40rpx;
   border-top-right-radius: 40rpx;
-  position: relative;
-  top: -50rpx;
+  margin-top: -50rpx;
   background-color: #fff;
+  overflow: auto;
 }

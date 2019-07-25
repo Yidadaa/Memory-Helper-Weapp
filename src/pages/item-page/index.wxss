@@ -2,6 +2,21 @@
 @import '/style/button.wxss';
 @import '/style/animation.wxss';
 
+.root-page {
+  background-color: #00C0FF;
+}
+
+.top-loading {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40rpx 0;
+  position: fixed;
+  top: -120rpx;
+  width: 100%;
+}
+
 .item-date-range {
   font-size: 28rpx;
   font-weight: bold;
