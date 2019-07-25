@@ -19,7 +19,7 @@ Page({
   onLoad () {
     const icons = ['finish-white', 'add-icon-white', 'folder-white', 'save-white']
     this.setData({
-      items: new Array(5).fill(0).map((v, i) => {
+      items: new Array(8).fill(0).map((v, i) => {
         return {
           icon: 'fsf',
           title: 'LeetCode题目精选' + i.toString(),

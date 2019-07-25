@@ -53,7 +53,7 @@ module.exports = Behavior({
       /**
        * 构建页面动画
        */
-      return `transition: all .5s ease;
+      return `transition: all .4s ease;
         width: ${width}px; height: ${height}px;
         transform: translate(${left}px, ${top}px);
         ${onTop ? 'z-index: 999;' : ''}`

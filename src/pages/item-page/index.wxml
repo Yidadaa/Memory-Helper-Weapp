@@ -43,4 +43,14 @@
       </navigator>
     </view>
   </fixed-bottom>
+  <fixed-bottom id="fixed-bottom" show="{{displayCardIndex >= 0}}">
+    <view class="page bottom-buttons">
+      <view class="common-btn cancel-btn" bind:tap="hideFlyCard" hover-class="btn-on-hover">
+        <image class="btn-icon" src="/imgs/arrow-back-white.svg"></image>
+      </view>
+      <navigator class="common-btn edit-btn" url="/pages/new-card/index" hover-class="btn-on-hover">
+        <image class="btn-icon" src="/imgs/edit-white.svg"></image>
+      </navigator>
+    </view>
+  </fixed-bottom>
 </scroll-view>

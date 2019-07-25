@@ -39,8 +39,10 @@ Page({
     })
   },
 
-  onCardFly (e) {
-    console.log(e)
+  hideFlyCard (e) {
+    this.setData({
+      displayCardIndex: -1
+    })
   },
 
   loadData () {

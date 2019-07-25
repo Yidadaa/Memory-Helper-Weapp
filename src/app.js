@@ -36,7 +36,6 @@ App({
     // 获取设备信息
     wx.getSystemInfo({
       success: res => {
-        console.log(res)
         this.deviceInfo = res
       }
     })

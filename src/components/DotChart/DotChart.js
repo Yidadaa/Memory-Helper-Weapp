@@ -1,5 +1,5 @@
 Component({
-  behaviors: [require('../../behaviors/FlyPage')],
+  behaviors: [require('../../behaviors/Flyable')],
 
   properties: {
     data: {
@@ -23,10 +23,10 @@ Component({
   },
   methods: {
     onTap (e) {
-      console.log(e, this.data)
       this.setData({
         shouldFly: !this.data.shouldFly
       })
+      this.data.shouldFly ? wx.hideTabBar() : wx.showTabBar()
     },
     _getRandomData () {
       const today = new Date().getDay() - 1

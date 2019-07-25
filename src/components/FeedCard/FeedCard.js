@@ -1,5 +1,5 @@
 Component({
-  behaviors: [require('../../behaviors/FlyPage')],
+  behaviors: [require('../../behaviors/Flyable')],
 
   properties: {
     date: {

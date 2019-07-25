@@ -5,9 +5,9 @@
   height: 240rpx;
   width: 100%;
   position: relative;
-  background-color: #fff;
   transform: rotate(0);
   transition: transform .5s ease;
+  background-color: #fff;
 }
 
 .fly-chart {
@@ -43,12 +43,13 @@
 
 .dot {
   margin-right: 5rpx;
-  background-color: rgb(255, 62, 120);
+  background-color: #00C0FF;
   height: 30rpx;
   width: 30rpx;
   display: inline-block;
   transition: all ease .3s;
   opacity: 1;
+  border-radius: 10rpx;
 }
 
 .dot-week {
@@ -57,7 +58,7 @@
   font-size: 20rpx;
   font-family: monospace;
   float: right;
-  color: rgba(255, 62, 120, 0.5);
+  color: rgb(0, 125, 170);
 }
 
 .dot-tips {
@@ -70,7 +71,7 @@
   top: 0;
   left: 0;
   font-weight: bold;
-  color: rgb(255, 62, 120);
+  color: #00C0FF;
   animation: fade-in 1s ease;
 }
 

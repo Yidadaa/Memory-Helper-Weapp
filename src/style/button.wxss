@@ -29,6 +29,12 @@
   box-shadow: rgba(255, 62, 120, 0.2) 9rpx 9rpx 16rpx;
 }
 
+.edit-btn {
+  background-color: rgb(108, 202, 31);
+  color: #fff;
+  box-shadow: rgba(108, 202, 31, 0.2) 9rpx 9rpx 16rpx;
+}
+
 .btn-on-hover {
   transform: scale(1.05);
   filter: brightness(0.9);
