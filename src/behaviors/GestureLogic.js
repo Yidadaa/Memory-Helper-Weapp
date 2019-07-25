@@ -14,9 +14,11 @@ module.exports = ({gestureID, threshold, endFuncName, direction}) => Behavior({
       this.startX = touch.clientX
       this.startY = touch.clientY
       this.triggered = false
+      this.moved = false
     },
   
     [`on${gestureID}GestureMove`]: function (e) {
+      this.moved = true
       if (!this.data[`enable${gestureID}Gesture`] || this.triggered) return
       const touch = e.changedTouches[0]
       const x = touch.clientX
@@ -25,13 +27,9 @@ module.exports = ({gestureID, threshold, endFuncName, direction}) => Behavior({
     },
   
     [`on${gestureID}GestureEnd`]: function (e) {
+      if (!this.triggered) this[`reset${gestureID}Gesture`]()
       this.startX = 0
       this.startY = 0
-      if (this[endFuncName]) {
-        this[`_trigger${gestureID}EndFunc`]()
-      } else {
-        console.error(`[${gestureID}] dose not have function: ${endFuncName}`)
-      }
     },
 
     [`reset${gestureID}Gesture`]: function (e) {
@@ -42,7 +40,11 @@ module.exports = ({gestureID, threshold, endFuncName, direction}) => Behavior({
 
     [`_trigger${gestureID}EndFunc`]: function () {
       if (this.triggered) return
-      this[endFuncName]()
+      if (this[endFuncName]) {
+        this[endFuncName]()
+      } else {
+        console.error(`[${gestureID}] dose not have function: ${endFuncName}`)
+      }
       this.triggered = true
     },
 

@@ -38,6 +38,15 @@ Component({
     },
   
     onPageScroll (e) {
+      if (!this.data.enableTopGesture && e.scrollTop < 10) {
+        this.setData({
+          enableTopGesture: true
+        })
+      } else if (this.data.enableTopGesture && e.scrollTop > 10) {
+        this.setData({
+          enableTopGesture: false
+        })
+      }
       this.selectComponent('#fixed-bottom').onPageScroll(e)
     },
   
