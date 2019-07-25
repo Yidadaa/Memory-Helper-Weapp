@@ -51,7 +51,7 @@
   bottom: 0;
   left: 0;
   padding-top: 20rpx;
-  animation: slide-in-bottom .8s ease;
+  animation: slide-in-bottom .5s ease;
 }
 
 .edit-section {
@@ -145,7 +145,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 60rpx;
-  animation: slide-in-bottom .8s ease backwards;
+  animation: slide-in-bottom .5s ease backwards;
   animation-delay: .1s;
 }
 

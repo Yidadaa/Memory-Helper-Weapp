@@ -45,7 +45,7 @@
   bottom: 0;
   left: 0;
   padding-top: 20rpx;
-  animation: slide-in-bottom .8s ease;
+  animation: slide-in-bottom .5s ease;
 }
 
 .edit-section {
@@ -122,7 +122,7 @@
 .bottom-buttons {
   display: flex;
   justify-content: space-between;
-  animation: slide-in-bottom .9s ease;
+  animation: slide-in-bottom .5s ease;
   margin-top: 40rpx;
 }
 
