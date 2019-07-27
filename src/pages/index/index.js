@@ -33,6 +33,13 @@ Page({
     })
   },
 
+  onShareAppMessage () {
+    return {
+      title: '憨批，来看👴的小程序',
+      path: 'pages/index/index'
+    }
+  },
+
   onPageScroll (e) {
     this.selectComponent('#fixed-bottom').onPageScroll(e)
   }

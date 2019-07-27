@@ -1,7 +1,7 @@
 <!-- index.wxml -->
 <view class="page">
   <view class="page-title">概览</view>
-  <view class="today-summary with-radius">
+  <view class="today-summary with-radius" bind:tap="">
     <view class="summary-date">
       <view class="date-text">2018 07 20</view>
       <image class="date-bg" src="/imgs/star.svg"></image>
@@ -31,8 +31,8 @@
   <view class="section">
     <view class="section-header">
       <view class="section-title">所有项目</view>
-      <navigator url="/pages/new-item/index" hover-class="btn-on-hover" class="header-btn">
-        <image src="/imgs/add-circle.svg" alt="添加" class="add-btn header-btn" />
+      <navigator url="/pages/new-item/index" hover-class="btn-on-hover" class="add-btn">
+        <image src="/imgs/add-circle.svg" alt="添加" class="header-btn" />
       </navigator>
     </view>
     <view class="section-content all-items">

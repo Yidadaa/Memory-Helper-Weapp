@@ -72,6 +72,10 @@
   justify-content: space-between;
 }
 
+.add-btn {
+  padding-left: 100rpx;
+}
+
 .content-block {
   padding: 40rpx;
   background-color: #00C0FF;

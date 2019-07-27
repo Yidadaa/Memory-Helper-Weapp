@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/item-page/index",
     "pages/study-page/index",
+    "pages/item-page/index",
     "pages/new-item/index",
     "pages/new-card/index",
     "pages/summary/index",

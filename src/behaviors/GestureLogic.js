@@ -40,6 +40,7 @@ module.exports = ({gestureID, threshold, endFuncName, direction}) => Behavior({
 
     [`_trigger${gestureID}EndFunc`]: function () {
       if (this.triggered) return
+      wx.vibrateShort()
       if (this[endFuncName]) {
         this[endFuncName]()
       } else {
