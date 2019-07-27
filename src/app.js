@@ -39,6 +39,11 @@ App({
         this.deviceInfo = res
       }
     })
+
+    // 初始化数据库
+    wx.cloud.init({
+      traceUser: true
+    })
   },
   globalData: {
     userInfo: null,

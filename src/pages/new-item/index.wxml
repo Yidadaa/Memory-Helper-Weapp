@@ -1,10 +1,12 @@
 <view class="page" style="background-color: {{colors[selectedColorIndex]}}">
   <view class="item">
     <view class="item-header">
-      <input class="item-title" type="text" placeholder="项目名称" placeholder-class="item-text-holder"/>
+      <input class="item-title" type="text" placeholder="项目名称" bindinput="onTitleChange"
+        placeholder-class="item-text-holder"/>
       <image src="/imgs/add-icon-white.svg" class="item-add-icon"/>
     </view>
-    <textarea placeholder="项目描述文字" placeholder-class="item-text-holder" class="item-description"/>
+    <textarea placeholder="项目描述文字" bindinput="onDescriptionChange"
+      placeholder-class="item-text-holder" class="item-description"/>
   </view>
   <view class="edit-container page">
     <view class="edit-section">
@@ -34,7 +36,7 @@
         <view class="bottom-button common-btn cancel-btn" hover-class="btn-on-hover" bind:tap="onCancelBtn">
           <image src="/imgs/arrow-back-white.svg" class="btn-icon"/>
         </view>
-        <view class="bottom-button common-btn primary-btn" hover-class="btn-on-hover">
+        <view class="bottom-button common-btn primary-btn" hover-class="btn-on-hover" bind:tap="onSaveBtn">
           <image src="/imgs/save-white.svg" class="btn-icon"/>
         </view>
       </view>
