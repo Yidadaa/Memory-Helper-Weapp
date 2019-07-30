@@ -25,6 +25,7 @@
         <view class="section-title">复习进度</view>
       </view>
       <view class="section-content">
+        <empty-list wx:if="{{noProgressData}}" text="这里空空如也" sub-text="添加卡组后可以在此查看学习进度"></empty-list>
         <navigator class="card progress-card ripple" hover-class="ripple-on-hover"
             wx:for="{{items}}" wx:key="index"
             url="/pages/item-page/index?id={{item._id}}&color={{item.color}}">
@@ -48,6 +49,7 @@
         <view class="section-title">复习动态</view>
       </view>
       <view class="section-content">
+        <empty-list wx:if="{{noCardData}}" text="暂时还没有数据" sub-text="马上开始今日份的复习任务吧"></empty-list>
         <view class="card feed-card ripple" hover-class="ripple-on-hover" wx:for="{{cards}}" wx:key="index">
           <view class="card-header">
             <image class="card-icon" src="/imgs/calendar.svg"></image>

@@ -1,3 +1,27 @@
-<view class="fixed-bottom-container {{show && shouldShow ? 'show' : 'hide'}}">
-  <slot></slot>
+<view class="empty-card">
+  <view class="empty-content">
+    <view class="fake-card">
+      <view class="fake-line"></view>
+      <view class="fake-line"></view>
+    </view>
+    <view class="fake-card">
+      <view class="fake-line"></view>
+      <view class="fake-line"></view>
+    </view>
+  </view>
+  <view class="little-things circles">
+    <view class="circle"></view>
+    <view class="circle"></view>
+    <view class="circle circle-border"></view>
+    <view class="circle circle-border"></view>
+  </view>
+  <view class="little-things pluses">
+    <view class="plus"></view>
+    <view class="plus"></view>
+    <view class="plus"></view>
+  </view>
+  <view class="texts">
+    <view class="text">{{text}}</view>
+    <view class="sub-text text">{{subText}}</view>
+  </view>
 </view>

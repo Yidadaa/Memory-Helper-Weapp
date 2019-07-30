@@ -1,8 +1,9 @@
 {
   "usingComponents": {
     "bar-chart": "/components/BarChart/BarChart",
-    "dot-chart": "/components/DotChart/DotChart"
+    "dot-chart": "/components/DotChart/DotChart",
+    "empty-list": "/components/EmptyList/EmptyList"
   },
   "enablePullDownRefresh": true,
-  "backgroundColor": "#00C0FF"
+  "backgroundColor": "#fff"
 }

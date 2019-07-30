@@ -12,9 +12,7 @@ Page({
     // 项目信息
     items: [],
 
-    // 处理button动画
-    lastPageY: 0,
-    showBtn: true,
+    noItemData: false,
   },
 
   onLoad () {
@@ -22,9 +20,7 @@ Page({
   },
 
   onShow () {
-    console.log(api)
     api.getUserCardGroup().then(res => {
-      console.log(res)
       this.setData({
         items: res.data.map(v => {
           return {
@@ -34,7 +30,8 @@ Page({
             icon: `/imgs/${v.icon}.svg`,
             number: v.total
           }
-        })
+        }),
+        noItemData: res.data.length === 0
       })
     })
   },

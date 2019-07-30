@@ -9,7 +9,9 @@ Page({
     frequencyChartLoading: true,
     frequencyChartNoData: false,
     items: [],
-    cards: []
+    cards: [],
+    noCardData: false,
+    noProgressData: false
   },
 
   onLoad () {
@@ -32,7 +34,8 @@ Page({
         summaryChartNoData: Math.random() > 0.5,
         summaryChartLoading: false,
         frequencyChartNoData: Math.random() > 1,
-        frequencyChartLoading: false
+        frequencyChartLoading: false,
+        noCardData: true
       })
       wx.stopPullDownRefresh()
     }, 1000)
@@ -49,7 +52,8 @@ Page({
               shadowColor: v.color.replace(')', ', 0.2)').replace('rgb', 'rgba'),
               icon: `/imgs/${v.icon}.svg`
             }
-          })
+          }),
+          noProgressData: res.data.length === 0
         })
       })
     })

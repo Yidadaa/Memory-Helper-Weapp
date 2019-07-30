@@ -124,7 +124,9 @@ Component({
     deleteCardGroup () {
       api.deleteCardGroup({
         id: this.data.id
-      }).then(console.log)
+      }).then(res => {
+        wx.navigateBack()
+      })
     }
   }
 })
