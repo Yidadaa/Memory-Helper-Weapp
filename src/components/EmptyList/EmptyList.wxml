@@ -1,4 +1,4 @@
-<view class="empty-card">
+<view class="empty-card" hover-class="on-card-hover">
   <view class="empty-content">
     <view class="fake-card">
       <view class="fake-line"></view>

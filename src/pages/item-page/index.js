@@ -20,6 +20,7 @@ Component({
     frequencyChartNoData: false,
 
     // 卡片信息
+    noCardData: false,
     cards: [],
     displayCardIndex: -1
   },
@@ -63,7 +64,7 @@ Component({
     },
 
     refresh () {
-      this.loadData(this.resetTopGesture.bind(this))
+      this.loadData(this.data.id, this.resetTopGesture.bind(this))
     },
 
     hideFlyCard (e) {
@@ -95,8 +96,10 @@ Component({
           color: cardGroup.data.color,
           frequencyChartNoData: Math.random() > 1,
           frequencyChartLoading: false,
-          loading: false
+          loading: false,
+          noCardData: cards.data.length === 0
         })
+        cb && cb()
       })
     },
 

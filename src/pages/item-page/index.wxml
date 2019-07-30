@@ -42,6 +42,7 @@
         <view class="section-title">卡片</view>
       </view>
       <view class="section-content">
+        <empty-list wx:if="{{noCardData}}" text="卡组内没有卡片" subText="点击右下角按钮可新建卡片"></empty-list>
         <view class="feed-card" wx:for="{{cards}}" wx:key="index" data-index="{{index}}" bind:tap="onCardTap">
           <feed-card title="{{item.front}}" date="{{item.createdAt}}" content="{{item.back}}" folder="{{group.title}}"
             status="{{item.status}}" times="{{item.times}}" should-fly="{{index === displayCardIndex}}"></feed-card>

@@ -2,7 +2,8 @@
   "usingComponents": {
     "dot-chart": "/components/DotChart/DotChart",
     "fixed-bottom": "/components/FixedBottom/FixedBottom",
-    "feed-card": "/components/FeedCard/FeedCard"
+    "feed-card": "/components/FeedCard/FeedCard",
+    "empty-list": "/components/EmptyList/EmptyList"
   },
   "backgroundColor": "#00C0FF"
 }

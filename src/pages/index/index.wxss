@@ -109,12 +109,15 @@
 }
 
 .block-title {
-  font-size: 28rpx;
+  font-size: 30rpx;
   margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  height: 84rpx;
+  line-height: 1.4;
   font-weight: bold;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 2;
   overflow: hidden;
 }
 
