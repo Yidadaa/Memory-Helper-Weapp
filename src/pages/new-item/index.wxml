@@ -2,11 +2,11 @@
   <view class="item">
     <view class="item-header">
       <input class="item-title" type="text" placeholder="项目名称" bindinput="onTitleChange"
-        placeholder-class="item-text-holder"/>
+        placeholder-class="item-text-holder" value="{{title}}"/>
       <image src="/imgs/add-icon-white.svg" class="item-add-icon"/>
     </view>
     <textarea placeholder="项目描述文字" bindinput="onDescriptionChange"
-      placeholder-class="item-text-holder" class="item-description"/>
+      placeholder-class="item-text-holder" class="item-description" value="{{description}}"/>
   </view>
   <view class="edit-container page">
     <view class="edit-section">

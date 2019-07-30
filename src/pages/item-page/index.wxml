@@ -7,9 +7,9 @@
     <view class="page-title">{{group.title}}</view>
     <view class="item-info">
       <image class="item-icon" src="/imgs/folder-white.svg"></image>
-      <view class="item-text">15张卡片</view>
+      <view class="item-text">{{group.total}}张卡片</view>
       <image class="item-icon" src="/imgs/finish-white.svg"></image>
-      <view class="item-text">10张已完成</view>
+      <view class="item-text">{{group.finish}}张已完成</view>
       <image class="item-icon" src="/imgs/timelapse-white.svg"></image>
       <view class="item-text">预计10天完成</view>
     </view>

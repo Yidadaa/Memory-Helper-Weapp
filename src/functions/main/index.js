@@ -66,8 +66,8 @@ const functions = {
   },
 
   updateCardGroup: async (event) => {
-    return db.collection('CardGroup').update({
-      data: event
+    return db.collection('CardGroup').doc(event.id).update({
+      data: event.data
     })
   },
   

@@ -1,0 +1,3 @@
+<view class="fixed-bottom-container {{show && shouldShow ? 'show' : 'hide'}}">
+  <slot></slot>
+</view>

@@ -33,6 +33,10 @@ Component({
         id, color
       })
     },
+
+    onShow () {
+      this.loadData(this.data.id)
+    },
   
     onPageScroll (e) {
       // 限制下拉手势的触发条件，防止在滚动页面时触发刷新操作
@@ -88,6 +92,7 @@ Component({
               createdAt: format('YYYY年MM月DD日 hh:mm', v.createdAt)
             }
           }),
+          color: cardGroup.data.color,
           frequencyChartNoData: Math.random() > 1,
           frequencyChartLoading: false,
           loading: false
@@ -101,7 +106,7 @@ Component({
         success: res => {
           [
             () => console.log('[触发卡组分享]'),
-            () => wx.navigateTo({url: '/pages/new-item/index'}),
+            () => wx.navigateTo({url: `/pages/new-item/index?groupID=${this.data.group._id}`}),
             () => wx.showModal({
               title: '确认移入回收站？',
               content: '您可以随时从回收站中恢复该卡组。',
