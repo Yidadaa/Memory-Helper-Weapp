@@ -7,14 +7,10 @@
   box-sizing: border-box;
   flex-wrap: wrap;
   perspective: 800rpx;
-  animation: scale-in .3s ease;
+  animation: scale-in .3s ease backwards;
+  animation-delay: .6s;
   padding-bottom: 100rpx;
   overflow: hidden;
-  transition: all ease .3s;
-}
-
-.on-card-hover {
-  transform: scale(0.9);
 }
 
 .empty-content {
@@ -174,7 +170,7 @@
 
 @keyframes scale-in {
   from {
-    transform: scale(0.3);
+    transform: scale(0.8);
     opacity: 0;
   }
   to {

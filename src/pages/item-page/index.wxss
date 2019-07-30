@@ -16,6 +16,10 @@
   transition: all ease .3s;
 }
 
+.page-title {
+  min-height: 80rpx;
+}
+
 .page-content {
   margin-top: -150rpx;
 }

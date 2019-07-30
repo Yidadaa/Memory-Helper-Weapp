@@ -21,7 +21,7 @@
         <image class="header-btn" src="/imgs/more.svg"></image>
       </view>
       <view class="section-content">
-        <view class="loading-text" wx:if="{{loading}}">加载中</view>
+        <view class="loading-text" wx:if="{{loading && group.description.length === 0}}">加载中</view>
         <view class="item-description">{{group.description}}</view>
       </view>
     </view>
