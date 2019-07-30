@@ -1,11 +1,11 @@
-<view class="page">
+<view class="page" style="background: {{color}}">
   <view class="item">
     <view class="item-header">
       <input class="item-title" type="text" placeholder="正面文字" bindinput="onTitleInput"
-        placeholder-class="item-text-holder"/>
+        placeholder-class="item-text-holder" value="{{front}}"/>
     </view>
     <textarea placeholder="背面文字" placeholder-class="item-text-holder" bindinput="onContentInput"
-      class="item-description"/>
+      class="item-description" value="{{back}}"/>
   </view>
   <view class="edit-container page animated {{isSelecting ? 'selecting-folder' : 'normal-folder'}}">
     <view class="edit-section">
@@ -31,7 +31,8 @@
         <view class="bottom-button common-btn cancel-btn" hover-class="btn-on-hover" bind:tap="onCancelBtn">
           <image src="/imgs/arrow-back-white.svg" class="btn-icon"/>
         </view>
-        <view class="bottom-button common-btn primary-btn" hover-class="btn-on-hover" bind:tap="onSaveBtn">
+        <view class="bottom-button common-btn primary-btn" hover-class="btn-on-hover"
+            bind:tap="onSaveBtn" style="background: {{color}}">
           <image src="/imgs/save-white.svg" class="btn-icon"/>
         </view>
     </view>

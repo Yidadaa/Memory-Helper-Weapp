@@ -36,7 +36,8 @@
       </navigator>
     </view>
     <view class="section-content all-items">
-      <navigator class="content-block with-radius" wx:for="{{items}}" wx:key="index" url="/pages/item-page/index?id={{item._id}}"
+      <navigator class="content-block with-radius" wx:for="{{items}}" wx:key="index"
+          url="/pages/item-page/index?id={{item._id}}&color={{item.color}}"
           style="background-color: {{item.color}}; box-shadow: 9rpx 9rpx 16rpx {{item.shadowColor}}; animation-delay: {{index * 0.1}}s">
         <view class="block-header">
           <view class="block-number">{{item.number}}</view>

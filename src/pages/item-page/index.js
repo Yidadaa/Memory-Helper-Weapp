@@ -12,32 +12,25 @@ Component({
 
   data: {
     id: null,
-    item: {},
+    color: '#00C0FF',
+    group: {},
     loading: false,
     frequencyChartData: [],
     frequencyChartLoading: true,
     frequencyChartNoData: false,
 
     // 卡片信息
-    cards: new Array(5).fill({
-      date: '2018/07/19 23:00',
-      title: '122 - 股票买入的最佳时机',
-      content: '只需要选择基色的亮度和饱和度值与混合色进行混合而创建的效果，混合后的亮度及饱和度取决于基色，但色相取决于混合色',
-      folder: 'LeetCode题目精选',
-      status: '掌握',
-      times: '10'
-    }),
+    cards: [],
     displayCardIndex: -1
   },
 
   methods: {
     onLoad (params) {
-      const {id} = params
-      console.log(params)
+      const {id, color} = params
       this.loadData(id)
       this.setData({
         enableTopGesture: true,
-        id
+        id, color
       })
     },
   
@@ -81,13 +74,20 @@ Component({
         frequencyChartLoading: true,
         loading: true
       })
-      api.getCardGroup({id}).then(res => {
+      Promise.all([api.getCardGroup({id}), api.getAllCardsOf({id})]).then(res => {
+        const [cardGroup, cards] = res
         this.setData({
-          item: {
-            ...res.data,
-            start: format('YYYY / MM / DD', res.data.createdAt),
+          group: {
+            ...cardGroup.data,
+            start: format('YYYY / MM / DD', cardGroup.data.createdAt),
             end: format('YYYY / MM / DD', new Date())
           },
+          cards: cards.data.map(v => {
+            return {
+              ...v,
+              createdAt: format('YYYY年MM月DD日 hh:mm', v.createdAt)
+            }
+          }),
           frequencyChartNoData: Math.random() > 1,
           frequencyChartLoading: false,
           loading: false

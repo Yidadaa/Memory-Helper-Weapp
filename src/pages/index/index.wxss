@@ -112,6 +112,10 @@
   font-size: 28rpx;
   margin-top: 20rpx;
   font-weight: bold;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
 }
 
 .block-progress {

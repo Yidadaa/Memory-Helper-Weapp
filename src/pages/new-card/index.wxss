@@ -2,11 +2,11 @@
 @import '/style/list.wxss';
 
 .page {
-  background-color: #00C0FF;
   position: absolute;
   height: 100%;
   width: 100%;
   box-sizing: border-box;
+  transition: all ease .3s;
 }
 
 /* 正文区域 */

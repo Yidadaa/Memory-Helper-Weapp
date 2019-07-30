@@ -29,10 +29,10 @@ Page({
         items: res.data.map(v => {
           return {
             ...v,
-            progress: Math.random() * 0.5 + 0.5,
+            progress: v.finish / v.total,
             shadowColor: v.color.replace(')', ', 0.2)').replace('rgb', 'rgba'),
-            icon: `/imgs/finish-white.svg`,
-            number: parseInt(Math.random() * 200 + 1)
+            icon: `/imgs/${v.icon}.svg`,
+            number: v.total
           }
         })
       })

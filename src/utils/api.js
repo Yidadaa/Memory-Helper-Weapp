@@ -10,7 +10,10 @@ const names = [
   'updateCardGroup',
   'getCardGroup',
   'deleteCardGroup',
-  'createCard'
+  'createCard',
+  'getCard',
+  'getAllCardsOf',
+  'updateCard'
 ]
 
 let functions = {}

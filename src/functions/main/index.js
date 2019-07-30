@@ -4,22 +4,42 @@ const cloud = require('wx-server-sdk')
 cloud.init()
 const db = cloud.database()
 
+async function getSummaryOfGroup (group) {
+  /**
+   * 获取卡组的统计信息
+   */
+  const total = await db.collection('Card').where({groupID: group._id}).count()
+  const finish = await db.collection('Card').where({
+    groupID: group._id,
+    status: 1
+  }).count()
+  return {
+    ...group,
+    total: total.total,
+    finish: finish.total
+  }
+}
+
 const functions = {
   getUserCardGroup: async (event) => {
     const wxContext = cloud.getWXContext()
-    const cardGroups = db.collection('CardGroup').where({
+    const cardGroups = await db.collection('CardGroup').where({
       userID: wxContext.OPENID,
       isDeleted: false
     }).get()
+
+    const data = await Promise.all(cardGroups.data.map(getSummaryOfGroup))
   
-    return cardGroups
+    return {data}
   },
 
   getCardGroup: async (event) => {
     const wxContext = cloud.getWXContext()
-    const cardGroup = db.collection('CardGroup').doc(event.id).get()
+    const cardGroup = await db.collection('CardGroup').doc(event.id).get()
   
-    return cardGroup
+    return {
+      data: await getSummaryOfGroup(cardGroup.data)
+    }
   },
 
   createCardGroup: async (event) => {
@@ -30,7 +50,8 @@ const functions = {
         ...event,
         createdAt: new Date(),
         createdBy: wxContext.OPENID,
-        isDeleted: false
+        isDeleted: false,
+        count: 0
       }
     })
   },
@@ -52,10 +73,11 @@ const functions = {
   
   createCard: async (event) => {
     const wxContext = cloud.getWXContext()
+    const {front, back, groupID} = event
     return db.collection('Card').add({
       data: {
+        front, back, groupID,
         userID: wxContext.OPENID,
-        ...event,
         createdAt: new Date(),
         createdBy: wxContext.OPENID,
         isDeleted: false,
@@ -73,6 +95,21 @@ const functions = {
     }).get()
   
     return cards
+  },
+
+  getCard: async (event) => {
+    const card = await db.collection('Card').doc(event.id).get()
+    const group = await functions.getCardGroup({id: card.groupID})
+    return {
+      card: card.data,
+      group: group.data
+    }
+  },
+
+  updateCard: async (event) => {
+    return db.collection('Card').doc(event.id).update({
+      data: event.data
+    })
   },
 }
 
