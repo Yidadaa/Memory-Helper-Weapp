@@ -3,7 +3,7 @@
   bind:scroll="onPageScroll" bind:touchstart="onTopGestureStart" bind:touchend="onTopGestureEnd"
   bind:touchmove="onTopGestureMove">
   <view class="page-header page" style="background: {{color}}">
-    <view class="item-date-range">{{group.start}} - {{group.end}}</view>
+    <view class="item-date-range">开始于 {{group.start}}</view>
     <view class="page-title">{{group.title}}</view>
     <view class="item-info">
       <image class="item-icon" src="/imgs/folder-white.svg"></image>

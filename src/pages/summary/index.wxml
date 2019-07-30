@@ -26,18 +26,19 @@
       </view>
       <view class="section-content">
         <navigator class="card progress-card ripple" hover-class="ripple-on-hover"
-            wx:for="{{items}}" wx:key="index" url="/pages/item-page/index">
+            wx:for="{{items}}" wx:key="index"
+            url="/pages/item-page/index?id={{item._id}}&color={{item.color}}">
           <view class="card-content">
             <view class="card-left">
-              <view class="card-title">LeetCode题目精选</view>
+              <view class="card-title">{{item.title}}</view>
               <view class="card-bottom">
                 <image class="card-icon" src="/imgs/folder.svg"></image>
-                <view class="card-tips">15张卡片</view>
+                <view class="card-tips">{{item.total}}张卡片</view>
                 <image class="card-icon" src="/imgs/finish.svg"></image>
-                <view class="card-tips">10张已掌握</view>
+                <view class="card-tips">{{item.finish}}张已掌握</view>
               </view>
             </view>
-            <view class="card-right circle-chart">50%</view>
+            <view class="card-right circle-chart">{{item.progress}}%</view>
           </view>
         </navigator>
       </view>

@@ -1,3 +1,5 @@
+import api from '../../utils/api'
+
 Page({
   data: {
     summaryChartArray: [],
@@ -6,8 +8,8 @@ Page({
     frequencyChartData: [],
     frequencyChartLoading: true,
     frequencyChartNoData: false,
-    items: new Array(4).fill(0),
-    cards: new Array(5).fill(0)
+    items: [],
+    cards: []
   },
 
   onLoad () {
@@ -24,6 +26,7 @@ Page({
       summaryChartLoading: true,
       frequencyChartLoading: true
     })
+    this.loadProgress()
     setTimeout(() => {
       this.setData({
         summaryChartNoData: Math.random() > 0.5,
@@ -33,5 +36,22 @@ Page({
       })
       wx.stopPullDownRefresh()
     }, 1000)
+  },
+
+  loadProgress () {
+    return new Promise((resolve) => {
+      api.getUserCardGroup().then(res => {
+        this.setData({
+          items: res.data.map(v => {
+            return {
+              ...v,
+              progress: v.total ? (v.finish / v.total * 100).toFixed(0) : 0,
+              shadowColor: v.color.replace(')', ', 0.2)').replace('rgb', 'rgba'),
+              icon: `/imgs/${v.icon}.svg`
+            }
+          })
+        })
+      })
+    })
   }
 })
