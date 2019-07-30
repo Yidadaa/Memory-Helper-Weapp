@@ -17,6 +17,10 @@ Component({
     left: {
       type: Number,
       value: 0
+    },
+    color: {
+      type: String,
+      value: '#00C0FF'
     }
   },
   data: {

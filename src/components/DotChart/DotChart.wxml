@@ -4,9 +4,9 @@
     <view class="dot-line" wx:for="{{renderData}}" wx:key="index">
       <view class="dots">
         <view class="dot" wx:for="{{item}}" wx:for-item="dot" wx:for-index="dindex" wx:key="dindex"
-          style="opacity: {{dot}}"></view>
+          style="opacity: {{dot}}; background: {{color}}"></view>
       </view>
-      <view class="dot-week">{{weekStrs[index]}}</view>
+      <view class="dot-week" style="color: {{color}}">{{weekStrs[index]}}</view>
     </view>
   </view>
   <view class="dot-tips" wx:if="{{(noData || loading)}}">

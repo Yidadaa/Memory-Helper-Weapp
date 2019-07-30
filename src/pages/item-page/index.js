@@ -1,4 +1,6 @@
 import GestureLogic from '../../behaviors/GestureLogic'
+import api from '../../utils/api'
+import format from '../../utils/format'
 
 Component({
   behaviors: [GestureLogic({
@@ -9,10 +11,9 @@ Component({
   })],
 
   data: {
-    itemTitle: 'LeetCode题目精选',
-    summaryChartArray: [],
-    summaryChartNoData: false,
-    summaryChartLoading: false,
+    id: null,
+    item: {},
+    loading: false,
     frequencyChartData: [],
     frequencyChartLoading: true,
     frequencyChartNoData: false,
@@ -30,15 +31,18 @@ Component({
   },
 
   methods: {
-    onLoad () {
-      this.loadData()
+    onLoad (params) {
+      const {id} = params
+      console.log(params)
+      this.loadData(id)
       this.setData({
-        enableTopGesture: true
+        enableTopGesture: true,
+        id
       })
     },
   
     onPageScroll (e) {
-      console.log(e.detail.scrollTop)
+      // 限制下拉手势的触发条件，防止在滚动页面时触发刷新操作
       if (!this.data.enableTopGesture && e.detail.scrollTop < 100) {
         this.setData({
           enableTopGesture: true
@@ -53,9 +57,11 @@ Component({
   
     onCardTap (e) {
       const index = e.currentTarget.dataset.index
+      const isSameCard = index === this.data.displayCardIndex
+      // 如果点击了同一张卡片，则需要收回该卡片
       this.setData({
-        displayCardIndex: index === this.data.displayCardIndex ? -1: index,
-        enableTopGesture: index === this.data.displayCardIndex
+        displayCardIndex: isSameCard ? -1: index,
+        enableTopGesture: isSameCard
       })
     },
 
@@ -69,21 +75,51 @@ Component({
       })
     },
   
-    loadData (cb) {
-      if (this.data.summaryChartLoading) return
+    loadData (id, cb) {
       this.setData({
         summaryChartLoading: true,
-        frequencyChartLoading: true
+        frequencyChartLoading: true,
+        loading: true
       })
-      setTimeout(() => {
+      api.getCardGroup({id}).then(res => {
         this.setData({
-          summaryChartNoData: Math.random() > 0.5,
-          summaryChartLoading: false,
+          item: {
+            ...res.data,
+            start: format('YYYY / MM / DD', res.data.createdAt),
+            end: format('YYYY / MM / DD', new Date())
+          },
           frequencyChartNoData: Math.random() > 1,
-          frequencyChartLoading: false
+          frequencyChartLoading: false,
+          loading: false
         })
-        cb && cb()
-      }, 1000)
+      })
+    },
+
+    showActionSheet () {
+      wx.showActionSheet({
+        itemList: ['分享', '编辑卡组', '删除卡组'],
+        success: res => {
+          [
+            () => console.log('[触发卡组分享]'),
+            () => wx.navigateTo({url: '/pages/new-item/index'}),
+            () => wx.showModal({
+              title: '确认移入回收站？',
+              content: '您可以随时从回收站中恢复该卡组。',
+              success: (res) => {
+                if (res.confirm) {
+                  this.deleteCardGroup()
+                }
+              }
+            })
+          ][res.tapIndex]()
+        }
+      })
+    },
+
+    deleteCardGroup () {
+      api.deleteCardGroup({
+        id: this.data.id
+      }).then(console.log)
     }
   }
 })

@@ -1,8 +1,37 @@
+import api from '../../utils/api'
+
 Page({
   data: {
+    front: '',
+    back: '',
+
     isSelecting: false,
-    subItems: new Array(5).fill(0).map((v, i) => 'LeetCode题目精选' + i),
+    groups: [],
     selectedIndex: 0
+  },
+  
+  onLoad (params) {
+    console.log(params)
+    const {groupID, fixGroup} = params
+    this.params = params
+    api.getUserCardGroup().then(res => {
+      this.setData({
+        groups: res.data,
+        selectedIndex: res.data.findIndex(v => v._id === groupID)
+      })
+    })
+  },
+
+  onTitleInput (e) {
+    this.setData({
+      front: e.detail.value
+    })
+  },
+
+  onContentInput (e) {
+    this.setData({
+      back: e.detail.value
+    })
   },
 
   onListTap (e) {
@@ -28,5 +57,15 @@ Page({
         }
       }
     })
+  },
+
+  onSaveBtn (e) {
+    api.createCard({
+      front: this.data.front,
+      back: this.data.back,
+      groupID: this.params.fixGroup ?
+        this.params.groupID :
+        this.data.groups[this.data.selectedIndex]._id
+    }).then(console.log)
   }
 })

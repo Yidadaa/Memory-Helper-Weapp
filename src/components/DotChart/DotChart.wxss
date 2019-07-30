@@ -43,7 +43,7 @@
 
 .dot {
   margin-right: 5rpx;
-  background-color: #00C0FF;
+  background-color: #aaa;
   height: 30rpx;
   width: 30rpx;
   display: inline-block;
@@ -71,7 +71,7 @@
   top: 0;
   left: 0;
   font-weight: bold;
-  color: #00C0FF;
+  color: #aaa;
   animation: fade-in 1s ease;
 }
 

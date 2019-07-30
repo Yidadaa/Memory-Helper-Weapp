@@ -7,7 +7,10 @@ const db = wx.cloud.database()
 const names = [
   'getUserCardGroup',
   'createCardGroup',
-  'updateCardGroup'
+  'updateCardGroup',
+  'getCardGroup',
+  'deleteCardGroup',
+  'createCard'
 ]
 
 let functions = {}

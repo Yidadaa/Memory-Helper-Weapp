@@ -2,9 +2,9 @@
 <scroll-view scroll-y="{{displayCardIndex < 0 && TopNumber === 0}}" class="scroll-page"
   bind:scroll="onPageScroll" bind:touchstart="onTopGestureStart" bind:touchend="onTopGestureEnd"
   bind:touchmove="onTopGestureMove">
-  <view class="page-header page">
-    <view class="item-date-range">2018 / 07 / 01 - 2018 / 07 / 20</view>
-    <view class="page-title">{{itemTitle}}</view>
+  <view class="page-header page" style="background: {{item.color}}">
+    <view class="item-date-range">{{item.start}} - {{item.end}}</view>
+    <view class="page-title">{{item.title}}</view>
     <view class="item-info">
       <image class="item-icon" src="/imgs/folder-white.svg"></image>
       <view class="item-text">15张卡片</view>
@@ -16,15 +16,27 @@
   </view>
   <view class="page-content page" style="transform: translateY({{TopNumber * 100}}rpx); transition: all ease .5s;">
     <view class="section">
+      <view class="section-header" bind:tap="showActionSheet">
+        <view class="section-title">备注</view>
+        <image class="header-btn" src="/imgs/more.svg"></image>
+      </view>
+      <view class="section-content">
+        <view class="loading-text" wx:if="{{loading}}">加载中</view>
+        <view class="item-description">{{item.description}}</view>
+      </view>
+    </view>
+    
+    <view class="section">
       <view class="section-header">
         <view class="section-title">频率</view>
         <image class="header-btn" src="/imgs/share.svg"></image>
       </view>
       <view class="section-content frequency-chart">
         <dot-chart data="{{frequencyChartData}}" loading="{{frequencyChartLoading}}" left="{{TopNumber}}"
-          no-data="{{frequencyChartNoData}}"></dot-chart>
+          no-data="{{frequencyChartNoData}}" color="{{item.color}}"></dot-chart>
       </view>
     </view>
+
     <view class="section">
       <view class="section-header">
         <view class="section-title">卡片</view>
@@ -43,7 +55,7 @@
     <navigator class="common-btn cancel-btn" open-type="navigateBack" hover-class="btn-on-hover">
       <image class="btn-icon" src="/imgs/arrow-back-white.svg"></image>
     </navigator>
-    <navigator class="common-btn primary-btn" url="/pages/new-card/index" hover-class="btn-on-hover">
+    <navigator class="common-btn primary-btn" url="/pages/new-card/index?groupID={{id}}&fixGroup=1" hover-class="btn-on-hover">
       <image class="btn-icon" src="/imgs/note-add-white.svg"></image>
     </navigator>
   </view>

@@ -13,6 +13,7 @@
 
 .page-header {
   padding-bottom: 200rpx;
+  transition: all ease .3s;
 }
 
 .page-content {
@@ -39,6 +40,10 @@
 .item-text {
   font-size: 28rpx;
   margin-right: 30rpx;
+}
+
+.item-description {
+  font-size: 32rpx;
 }
 
 .feed-card {

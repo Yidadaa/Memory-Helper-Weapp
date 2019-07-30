@@ -1,9 +1,11 @@
 <view class="page">
   <view class="item">
     <view class="item-header">
-      <input class="item-title" type="text" placeholder="正面文字" placeholder-class="item-text-holder"/>
+      <input class="item-title" type="text" placeholder="正面文字" bindinput="onTitleInput"
+        placeholder-class="item-text-holder"/>
     </view>
-    <textarea placeholder="背面文字" placeholder-class="item-text-holder" class="item-description"/>
+    <textarea placeholder="背面文字" placeholder-class="item-text-holder" bindinput="onContentInput"
+      class="item-description"/>
   </view>
   <view class="edit-container page animated {{isSelecting ? 'selecting-folder' : 'normal-folder'}}">
     <view class="edit-section">
@@ -13,13 +15,13 @@
       </view>
       <view class="folders animated">
         <view class="parent-item list-item ripple animated" hover-class="ripple-on-hover" bind:tap="onListTap">
-          <view class="list-header">{{subItems[selectedIndex] || ''}}</view>
+          <view class="list-header">{{groups[selectedIndex].title || ''}}</view>
           <image class="list-tail list-icon" src="/imgs/right.svg"></image>
         </view>
         <scroll-view class="sub-items animated" scroll-y="{{true}}">
-          <view class="list-item ripple" wx:for="{{subItems}}" hover-class="ripple-on-hover"
+          <view class="list-item ripple" wx:for="{{groups}}" hover-class="ripple-on-hover"
               bind:tap="onListItemTap" data-index="{{index}}" wx:key="{{index}}">
-            <view class="list-header {{index === selectedIndex ? 'selected-item' : ''}}">{{item}}</view>
+            <view class="list-header {{index === selectedIndex ? 'selected-item' : ''}}">{{item.title}}</view>
             <image class="list-tail list-icon" src="/imgs/ok-primary.svg" wx:if="{{index === selectedIndex}}"></image>
           </view>
         </scroll-view>
@@ -29,7 +31,7 @@
         <view class="bottom-button common-btn cancel-btn" hover-class="btn-on-hover" bind:tap="onCancelBtn">
           <image src="/imgs/arrow-back-white.svg" class="btn-icon"/>
         </view>
-        <view class="bottom-button common-btn primary-btn" hover-class="btn-on-hover">
+        <view class="bottom-button common-btn primary-btn" hover-class="btn-on-hover" bind:tap="onSaveBtn">
           <image src="/imgs/save-white.svg" class="btn-icon"/>
         </view>
     </view>

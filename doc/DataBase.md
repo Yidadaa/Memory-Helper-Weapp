@@ -29,8 +29,8 @@
 {
   id: String,
   groupID: String,
-  title: String,
-  content: String,
+  front: String,
+  back: String,
   status: Number, // 0. 未掌握 1. 已掌握
   createdAt: Date,
   createdBy: String
