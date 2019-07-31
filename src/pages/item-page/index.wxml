@@ -41,8 +41,10 @@
       <view class="section-header">
         <view class="section-title">卡片</view>
       </view>
+      <empty-list text="{{loading ? '正在拉取卡片信息' : '这里空空如也'}}"
+        subText="{{loading ? '请坐和放宽' : '点击右下角按钮可添加卡组'}}"
+        wx:if="{{noCardData || loading}}" loading="{{loading}}"></empty-list>
       <view class="section-content">
-        <empty-list wx:if="{{noCardData}}" text="卡组内没有卡片" subText="点击右下角按钮可新建卡片"></empty-list>
         <view class="feed-card" wx:for="{{cards}}" wx:key="index" data-index="{{index}}" bind:tap="onCardTap">
           <feed-card title="{{item.front}}" date="{{item.createdAt}}" content="{{item.back}}" folder="{{group.title}}"
             status="{{item.status}}" times="{{item.times}}" should-fly="{{index === displayCardIndex}}"></feed-card>

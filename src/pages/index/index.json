@@ -2,5 +2,6 @@
   "usingComponents": {
     "fixed-bottom": "/components/FixedBottom/FixedBottom",
     "empty-list": "/components/EmptyList/EmptyList"
-  }
+  },
+  "enablePullDownRefresh": true
 }

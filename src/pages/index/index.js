@@ -20,9 +20,20 @@ Page({
   },
 
   onShow () {
+    this.loadData(false)
+  },
+
+  onPullDownRefresh () {
+    this.loadData()
+  },
+
+  loadData (withAnimation = true) {
+    // 首次加载需要动画
     this.setData({
-      loadingItems: true
+      loadingItems: withAnimation || !this.notFirst
     })
+    this.notFirst = true
+    // 非首次加载，除非是用户下拉刷新，否则没有大幅度动画
     api.getUserCardGroup().then(res => {
       this.setData({
         loadingItems: false,
@@ -37,6 +48,7 @@ Page({
         }),
         noItemData: res.data.length === 0
       })
+      wx.stopPullDownRefresh()
     })
   },
 

@@ -39,7 +39,7 @@ Page({
       this.loadSummary,
       this.loadFrequency,
       this.loadProgress,
-      this.loadCards].map(func => func.bind(this))).then(res => console.log)
+      this.loadCards].map(func => func.bind(this))).then(wx.stopPullDownRefresh)
   },
 
   loadSummary () {
