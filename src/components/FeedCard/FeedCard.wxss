@@ -7,3 +7,40 @@
   width: 100%;
   box-sizing: border-box;
 }
+
+.card-header, .card-bottom {
+  opacity: 0.5;
+}
+
+.card-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.page .card-text {
+  display: block;
+  overflow: visible;
+}
+
+.card-bottom {
+  justify-content: space-between;
+}
+
+.bottom-group {
+  display: flex;
+  align-items: center;
+}
+
+.card-tips {
+  margin: 0;
+}
+
+.folder-name {
+  max-width: 50%;
+}
+
+.card-bottom .card-text {
+  margin: 0;
+}

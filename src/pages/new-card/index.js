@@ -28,12 +28,12 @@ Page({
     } else {
       // 传入cardID，表示编辑卡片
       Promise.all([api.getCard({id: cardID}), api.getUserCardGroup()]).then(res => {
-        const [{card, group}, groups] = res
+        const [card, groups] = res
         this.setData({
           groups: groups.data,
-          selectedIndex: groups.data.findIndex(v => v._id === group._id),
-          front: card.front,
-          back: card.back
+          selectedIndex: groups.data.findIndex(v => v._id === card.data.groupID),
+          front: card.data.front,
+          back: card.data.back
         })
       })
     }

@@ -90,7 +90,8 @@ Component({
           cards: cards.data.map(v => {
             return {
               ...v,
-              createdAt: format('YYYY年MM月DD日 hh:mm', v.createdAt)
+              createdAt: format('YYYY 年 MM 月 DD 日  hh:mm', v.createdAt),
+              status: ['学习中', '已掌握'][v.status]
             }
           }),
           color: cardGroup.data.color,

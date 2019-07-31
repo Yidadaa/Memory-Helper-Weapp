@@ -22,16 +22,6 @@
       </view>
     </view>
     <view class="edit-section">
-      <view class="edit-header">
-        <view class="edit-title">评价粒度</view>
-        <image src="/imgs/poll.svg" class="edit-icon"/>
-      </view>
-      <view class="criterion-segs">
-        <view class="criterion-indicator {{criterionCount > 0 ? 'criterion-right' : 'criterion-left'}}" style="background-color: {{colors[selectedColorIndex]}}"></view>
-        <view class="criterion-count" data-index="0" bindtap="onCriterionChange">二段式</view>
-        <view class="criterion-count" data-index="1" bindtap="onCriterionChange">三段式</view>
-      </view>
-      <view class="criterion-example" style="color: {{colors[selectedColorIndex]}}">{{criterionExamples[criterionCount]}}</view>
       <view class="bottom-buttons">
         <view class="bottom-button common-btn cancel-btn" hover-class="btn-on-hover" bind:tap="onCancelBtn">
           <image src="/imgs/arrow-back-white.svg" class="btn-icon"/>

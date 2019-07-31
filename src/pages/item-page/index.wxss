@@ -18,6 +18,7 @@
 
 .page-title {
   min-height: 80rpx;
+  margin-bottom: 60rpx;
 }
 
 .page-content {
@@ -27,12 +28,20 @@
 .item-date-range {
   font-size: 28rpx;
   font-weight: bold;
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
 }
 
 .item-info {
   display: flex;
   align-items: center;
   margin-top: 30rpx;
+  justify-content: space-between;
+}
+
+.info-group {
+  display: flex;
+  align-items: center;
 }
 
 .item-icon {
@@ -43,7 +52,6 @@
 
 .item-text {
   font-size: 28rpx;
-  margin-right: 30rpx;
 }
 
 .item-description {

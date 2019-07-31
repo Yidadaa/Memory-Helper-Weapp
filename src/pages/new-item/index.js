@@ -8,8 +8,6 @@ Page({
 
     colors,
     selectedColorIndex: 0,
-    criterionCount: 0,
-    criterionExamples: ['忘记 / 掌握', '忘记 / 了解 / 掌握'],
     icon: 'default'
   },
 

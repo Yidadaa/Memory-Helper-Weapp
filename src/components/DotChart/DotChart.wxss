@@ -7,7 +7,6 @@
   position: relative;
   transform: rotate(0);
   transition: transform .5s ease;
-  background-color: #fff;
 }
 
 .fly-chart {

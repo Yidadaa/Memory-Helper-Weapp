@@ -1,7 +1,7 @@
 
 /* 卡片通用样式 */
 .card {
-  box-shadow: 0 0 30rpx rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.1);
   border-radius: 20rpx;
   align-items: center;
   padding: 40rpx;
@@ -33,8 +33,9 @@
 }
 
 .card-icon {
-  height: 34rpx;
-  width: 34rpx;
+  height: 28rpx;
+  width: 28rpx;
+  min-width: 28rpx;
   margin-right: 10rpx;
   display: inline-block;
 }

@@ -39,13 +39,17 @@
   width: 60rpx;
 }
 
+.item-description {
+  width: 100%;
+}
+
 /* 属性编辑区域 */
 .edit-container {
   background-color: #fff;
   border-top-left-radius: 40rpx;
   border-top-right-radius: 40rpx;
   position: fixed;
-  height: 680rpx;
+  height: 380rpx;
   width: 100%;
   z-index: 100;
   bottom: 0;

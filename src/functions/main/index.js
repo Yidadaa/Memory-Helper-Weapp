@@ -99,11 +99,7 @@ const functions = {
 
   getCard: async (event) => {
     const card = await db.collection('Card').doc(event.id).get()
-    const group = await functions.getCardGroup({id: card.groupID})
-    return {
-      card: card.data,
-      group: group.data
-    }
+    return card
   },
 
   updateCard: async (event) => {

@@ -41,6 +41,7 @@
 .circle-chart {
   height: 80rpx;
   width: 80rpx;
+  min-width: 80rpx;
   border-radius: 100rpx;
   border: #eee 8rpx solid;
   display: flex;

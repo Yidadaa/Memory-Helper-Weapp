@@ -5,5 +5,5 @@
     "empty-list": "/components/EmptyList/EmptyList"
   },
   "enablePullDownRefresh": true,
-  "backgroundColor": "#fff"
+  "backgroundColor": "#00C0FF"
 }

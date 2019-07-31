@@ -30,7 +30,7 @@
   </view>
   <view class="section">
     <view class="section-header">
-      <view class="section-title">所有项目</view>
+      <view class="section-title">今日卡组</view>
       <navigator url="/pages/new-item/index" hover-class="btn-on-hover" class="add-btn">
         <image src="/imgs/add-circle.svg" alt="添加" class="header-btn" />
       </navigator>

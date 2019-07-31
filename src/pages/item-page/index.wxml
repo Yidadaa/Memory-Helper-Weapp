@@ -5,13 +5,25 @@
   <view class="page-header page" style="background: {{color}}">
     <view class="item-date-range">开始于 {{group.start}}</view>
     <view class="page-title">{{group.title}}</view>
+
+    <view class="frequency-chart">
+      <dot-chart data="{{frequencyChartData}}" loading="{{frequencyChartLoading}}" left="{{TopNumber}}"
+        no-data="{{frequencyChartNoData}}" color="#fff"></dot-chart>
+    </view>
+
     <view class="item-info">
-      <image class="item-icon" src="/imgs/folder-white.svg"></image>
-      <view class="item-text">{{group.total}}张卡片</view>
-      <image class="item-icon" src="/imgs/finish-white.svg"></image>
-      <view class="item-text">{{group.finish}}张已完成</view>
-      <image class="item-icon" src="/imgs/timelapse-white.svg"></image>
-      <view class="item-text">预计10天完成</view>
+      <view class="info-group">
+        <image class="item-icon" src="/imgs/folder-white.svg"></image>
+        <view class="item-text">{{group.total}} 张卡片</view>
+      </view>
+      <view class="info-group">
+        <image class="item-icon" src="/imgs/finish-white.svg"></image>
+        <view class="item-text">{{group.finish}} 张已完成</view>
+      </view>
+      <view class="info-group">
+        <image class="item-icon" src="/imgs/timelapse-white.svg"></image>
+        <view class="item-text">预计 10 天后完成</view>
+      </view>
     </view>
   </view>
   <view class="page-content page" style="transform: translateY({{TopNumber * 100}}rpx); transition: all ease .5s;">
@@ -21,22 +33,10 @@
         <image class="header-btn" src="/imgs/more.svg"></image>
       </view>
       <view class="section-content">
-        <view class="loading-text" wx:if="{{loading && group.description.length === 0}}">加载中</view>
+        <view class="loading-text" wx:if="{{loading && (!group.description || group.description.length === 0)}}">加载中</view>
         <view class="item-description">{{group.description}}</view>
       </view>
     </view>
-    
-    <view class="section">
-      <view class="section-header">
-        <view class="section-title">频率</view>
-        <image class="header-btn" src="/imgs/share.svg"></image>
-      </view>
-      <view class="section-content frequency-chart">
-        <dot-chart data="{{frequencyChartData}}" loading="{{frequencyChartLoading}}" left="{{TopNumber}}"
-          no-data="{{frequencyChartNoData}}" color="{{group.color}}"></dot-chart>
-      </view>
-    </view>
-
     <view class="section">
       <view class="section-header">
         <view class="section-title">卡片</view>
