@@ -7,6 +7,10 @@ Component({
     subText: {
       type: String,
       value: '稍后再来刷新下吧'
+    },
+    loading: {
+      type: Boolean,
+      value: false
     }
   }
 })

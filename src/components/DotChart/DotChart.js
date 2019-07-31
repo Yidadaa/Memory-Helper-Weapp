@@ -56,27 +56,6 @@ Component({
           renderData: data
         })
       }
-    },
-    'loading': function(loading) {
-      /**
-       * 组件有三种状态：
-       *  1. 加载态[loading]
-       *  2. 加载完毕有数据[!loading and !noData]
-       *  3. 加载完毕无数据[!loading and noData]
-       */
-      if (this.loadingTimer) clearInterval(this.loadingTimer)
-      if (loading) {
-        // 进入加载状态，动画是随机生成的柱状图
-        this.loadingTimer = setInterval(() => {
-          this.setData({
-            renderData: this._getRandomData()
-          })
-        }, 500)
-      } else {
-        this.setData({
-          renderData: this._getRandomData()
-        })
-      }
     }
   }
 })

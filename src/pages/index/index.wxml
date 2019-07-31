@@ -35,8 +35,10 @@
         <image src="/imgs/add-circle.svg" alt="添加" class="header-btn" />
       </navigator>
     </view>
-    <view class="section-content all-items">
-      <empty-list text="这里空空如也" subText="快点击右上角按钮添加一个新卡组吧" wx:if="{{noItemData}}"></empty-list>
+    <empty-list text="{{loadingItems ? '正在拉取数据' : '这里空空如也'}}"
+      subText="{{loadingItems ? '请坐和放宽' : '快点击右上角按钮添加一个新卡组吧'}}"
+      wx:if="{{noItemData || loadingItems}}" loading="{{loadingItems}}"></empty-list>
+    <view class="section-content all-items" wx:else>
       <navigator class="content-block with-radius" wx:for="{{items}}" wx:key="index"
           url="/pages/item-page/index?id={{item._id}}&color={{item.color}}"
           style="background-color: {{item.color}}; box-shadow: 9rpx 9rpx 16rpx {{item.shadowColor}}; animation-delay: {{index * 0.1}}s">

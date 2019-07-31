@@ -10,7 +10,7 @@
     </view>
   </view>
   <view class="dot-tips" wx:if="{{(noData || loading)}}">
-    <image src="/imgs/loading-red.svg" class="loading-icon" wx:if="{{loading}}"/>
+    <image src="/imgs/loading.svg" class="loading-icon" wx:if="{{loading}}"/>
     <view wx:elif="{{noData}}">没有数据</view>
   </view>
 </scroll-view>

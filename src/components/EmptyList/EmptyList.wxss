@@ -8,7 +8,6 @@
   flex-wrap: wrap;
   perspective: 800rpx;
   animation: scale-in .3s ease backwards;
-  animation-delay: .6s;
   padding-bottom: 100rpx;
   overflow: hidden;
 }
@@ -150,6 +149,18 @@
   animation: rotate-z-2 4s ease-in-out infinite alternate-reverse;
 }
 
+.loading .empty-content {
+  animation: rotate-z-2 1s ease-in-out infinite alternate-reverse;
+}
+
+.loading .circles {
+  animation: fly-top .6s linear infinite;
+}
+
+.loading .pluses {
+  animation: fly-top 1s linear infinite;
+}
+
 @keyframes rotate-z-1 {
   from {
     transform: rotateY(-10deg);
@@ -176,5 +187,29 @@
   to {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+@keyframes rotate-z-360 {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(720deg);
+  }
+}
+
+@keyframes fly-top {
+  0% {
+    transform: translateY(-200rpx);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0rpx);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(200rpx);
+    opacity: 0;
   }
 }

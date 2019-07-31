@@ -11,7 +11,7 @@ Page({
 
     // 项目信息
     items: [],
-
+    loadingItems: true,
     noItemData: false,
   },
 
@@ -20,8 +20,12 @@ Page({
   },
 
   onShow () {
+    this.setData({
+      loadingItems: true
+    })
     api.getUserCardGroup().then(res => {
       this.setData({
+        loadingItems: false,
         items: res.data.map(v => {
           return {
             ...v,
