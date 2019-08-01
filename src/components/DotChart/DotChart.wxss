@@ -9,17 +9,13 @@
   transition: transform .5s ease;
 }
 
-.fly-chart {
-  transform: rotate(90deg);
-}
-
 .dot-content {
   width: 100%;
   height: 100%;
 }
 
 .blur-dot {
-  opacity: .2;
+  filter: blur(2rpx);
 }
 
 .dot-line {
@@ -70,8 +66,9 @@
   top: 0;
   left: 0;
   font-weight: bold;
-  color: #aaa;
+  color: #fff;
   animation: fade-in 1s ease;
+  text-shadow: 0 1rpx 1rpx rgba(0, 0, 0, 0.1);
 }
 
 .loading-icon {

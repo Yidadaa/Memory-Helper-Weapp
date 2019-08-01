@@ -1,6 +1,4 @@
 Component({
-  behaviors: [require('../../behaviors/Flyable')],
-
   properties: {
     data: {
       type: Array,
@@ -27,14 +25,11 @@ Component({
     renderData: new Array(7).fill(0).map(() => new Array(40).fill(0).map(v => Math.random())),
     firstRender: true,
     weekStrs: ['MON', 'TUE', 'WED', 'THU', 'FIR', 'SAT', 'SUN'],
-    flySelector: '.dot-chart'
+    width: 40 * 35 + 5
   },
   methods: {
     onTap (e) {
-      this.setData({
-        shouldFly: !this.data.shouldFly
-      })
-      this.data.shouldFly ? wx.hideTabBar() : wx.showTabBar()
+      console.log('do something')
     },
     _getRandomData () {
       const today = new Date().getDay() - 1
@@ -53,7 +48,8 @@ Component({
         })
       } else {
         this.setData({
-          renderData: data
+          renderData: data,
+          width: data[0].length * 35 + 5
         })
       }
     }
