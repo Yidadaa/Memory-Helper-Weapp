@@ -1,4 +1,5 @@
 @import '/style/card.wxss';
+@import '/style/animation.wxss';
 
 .summary-chart {
   margin-top: 40rpx;
@@ -22,6 +23,7 @@
 /* 进度卡片和动态卡片的样式 */
 .progress-card {
   justify-content: space-between;
+  animation: .3s ease slide-in-left;
 }
 
 .progress-card .card-content {

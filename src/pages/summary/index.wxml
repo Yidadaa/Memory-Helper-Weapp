@@ -3,23 +3,13 @@
     <view class="page-title">汇总</view>
     <view class="summary-chart">
       <view class="chart-title">2018 / 07 / 01 - 2018 / 07 / 20</view>
-      <view class="chart-content">
-        <bar-chart data="{{summaryChartArray}}" loading="{{summaryChartLoading}}"
-          no-data="{{summaryChartNoData}}"></bar-chart>
+      <view class="section-content frequency-chart">
+        <dot-chart data="{{frequencyChartData}}" loading="{{frequencyChartLoading}}"
+          no-data="{{frequencyChartNoData}}" color="#fff"></dot-chart>
       </view>
     </view>
   </view>
   <view class="page-content page">
-    <view class="section">
-      <view class="section-header">
-        <view class="section-title">频率</view>
-        <image class="header-btn" src="/imgs/share.svg"></image>
-      </view>
-      <view class="section-content frequency-chart">
-        <dot-chart data="{{frequencyChartData}}" loading="{{frequencyChartLoading}}"
-          no-data="{{frequencyChartNoData}}"></dot-chart>
-      </view>
-    </view>
     <view class="section">
       <view class="section-header">
         <view class="section-title">复习进度</view>
