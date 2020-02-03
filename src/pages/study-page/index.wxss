@@ -13,14 +13,63 @@
 }
 
 .progress-content .title {
-  text-align: center;
-  padding: 40rpx 0;
-  font-size: 40rpx;
-  color: rgba(0, 0, 0, 0.6);
-  height: 10vh;
+  font-size: 52rpx;
+  font-weight: bold;
+  color: #fff;
+  height: 15vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+}
+
+.title-text {
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 20rpx 52rpx 20rpx 40rpx;
+  width: 80vw;
+  border-top-left-radius: 100rpx;
+  border-bottom-left-radius: 100rpx;
+  transition: all ease .3s;
+  transform: translateX(0);
+  box-sizing: border-box;
+  opacity: 1;
+}
+
+.progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-data {
+  height: 10vh;
+  width: 70vw;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 24rpx;
+  align-content: space-around;
+  color: #fff;
+}
+
+.progress-line {
+  height: 20rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.progress-text {
+  margin-right: 20rpx;
+}
+
+.progress-bar {
+  background-color: rgba(255, 255, 255, 0.8);
+  min-width: 4vw;
+  height: 20rpx;
+  margin-right: 20rpx;
+  margin-bottom: -4rpx;
+  border-radius: 20rpx;
+  transition: width ease .3s;
 }
 
 .finished-cards {
@@ -65,7 +114,7 @@
   height: 60vh;
   position: fixed;
   bottom: 0;
-  transition: all ease .6s;
+  transition: all ease .3s;
   left: 0;
 }
 
@@ -102,6 +151,7 @@
   width: 100%;
   box-sizing: border-box;
   overflow-y: scroll;
+  font-size: 34rpx;
 }
 
 .text-content-hidden {

@@ -9,8 +9,29 @@
         <view class="finished-card"></view>
         <view class="finished-card"></view>
       </view>
+      <view class="progress-data">
+        <view class="progress-line">
+          <view class="progress-text">待学习</view>
+          <view class="progress-bar" style="width: {{ remained / total * 36 + 4 }}vw;"></view>
+          <view class="progress-number">{{ remained }}</view>
+        </view>
+        <view class="progress-line">
+          <view class="progress-text">需巩固</view>
+          <view class="progress-bar" style="width: {{ restudy / total * 36 + 4 }}vw;"></view>
+          <view class="progress-number">{{ restudy }}</view>
+        </view>
+        <view class="progress-line">
+          <view class="progress-text">已完成</view>
+          <view class="progress-bar" style="width: {{ finished / total * 36 + 4 }}vw;"></view>
+          <view class="progress-number">{{ finished }}</view>
+        </view>
+      </view>
     </view>
-    <view class="title">鸡蛋里的盒子</view>
+    <view class="title">
+      <view class="title-text"
+        style="transform: translateX({{ StudyNumber * 40 * !flyDone }}vw); opacity: {{ 1 - StudyNumber * !flyDone }};"
+        >{{ cardTitle }}</view>
+    </view>
   </view>
   <view class="fake-card fake-card-top card-top-radius"></view>
   <view class="fake-card fake-card-middle card-top-radius"></view>

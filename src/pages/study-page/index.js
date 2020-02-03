@@ -11,9 +11,9 @@ Component({
   ],
   data: {
     total: 15,
-    finished: 2,
-    restudy: 3,
-    remained: 10,
+    finished: 0,
+    restudy: 0,
+    remained: 15,
 
     cardTitle: '卡片标题',
     cardContent: new Array(10).fill('一些文字').join(''),
@@ -42,8 +42,11 @@ Component({
     onGestureFinish () {
       console.log('finish')
       this.setData({
-        flyDone: true,
-        enableStudyGesture: false
+        enableStudyGesture: false,
+        show: false,
+        finished: this.data.finished + !this.data.show - (this.data.remained == 0 && this.data.restudy == 0),
+        restudy: this.data.restudy + this.data.show - (this.data.remained == 0 && this.data.restudy > 0),
+        remained: this.data.remained - (this.data.remained > 0)
       })
     },
 
@@ -52,6 +55,7 @@ Component({
     },
 
     onTouchMove (e) {
+      if (!this.data.enableStudyGesture) return
       if (!this.data.flyStart) {
         this.setData({
           flyStart: true
@@ -68,7 +72,7 @@ Component({
           `left: ${ n * 25 }vw`,
           `height: ${ (1 - n * 0.5) * 60 }vh`,
           `top: ${ 40 - n * 10}vh`,
-          `transition: all ease .6s`
+          `transition: all ease .3s`
         ].join(';')
       })
     },
@@ -92,16 +96,18 @@ Component({
           border-radius: 20rpx;
           z-index: 99;
           padding: 0;\
-          transition: all ease .6s;`,
-        flyStart: false
+          transition: all ease .3s;`,
+        flyStart: false,
+        flyDone: true
       })
       setTimeout(() => {
         this.setData({
           flyStyle: 'transition: none',
           enableStudyGesture: true,
-          StudyNumber: 0
+          StudyNumber: 0,
+          flyDone: false
         })
-      }, 700)
+      }, 400)
     }
   }
 })
