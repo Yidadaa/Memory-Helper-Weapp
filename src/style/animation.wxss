@@ -77,3 +77,12 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes breath {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: .4;
+  }
+}

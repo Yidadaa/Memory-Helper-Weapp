@@ -35,6 +35,12 @@
   box-shadow: rgba(108, 202, 31, 0.2) 9rpx 9rpx 16rpx;
 }
 
+.disabled-btn {
+  background-color: #aaa;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 9rpx 9rpx 16rpx;
+}
+
 .btn-on-hover {
   transform: scale(1.05);
   filter: brightness(0.9);

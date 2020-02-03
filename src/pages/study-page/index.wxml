@@ -1,15 +1,42 @@
-<view class="page" bind:touchstart="onTouchStart" bind:touchmove="onTouchMove" bind:touchend="onTouchEnd">
-  <view class="progress">
-    <view class="finished sub-bar">{{finished}}</view>
-    <view class="remained sub-bar">{{remained}}</view>
-    <view class="restudy sub-bar">{{restudy}}</view>
-  </view>
-  <view class="box-3d" style="perspective: 1000rpx;">
-    <view class="item {{show ? 'item-reversed' : ''}}" bind:tap="onCardTap">
-      <view class="item-content" style="opacity: {{show ? 1 : 0}}">
-        <view class="item-title">122 - 股票的最佳买入时机</view>
-        <view class="item-description">只需要选择基色的亮度和饱和度值与混合色进行混合而创建的效果，混合后的亮度及饱和度取决于基色，但色相取决于混合色只需要选择基色的亮度和饱和度值与混合色进行混合而创建的效果，混合后的亮度及饱和度取决于基色，但色相取决于混合色</view>
+<view class="root-page {{ flyStart ? 'fly-start' : '' }}"
+    bind:touchstart="onTouchStart"
+    bind:touchmove="onTouchMove"
+    bind:touchend="onTouchEnd">
+  <view class="progress-content">
+    <view class="progress">
+      <view class="finished-cards">
+        <view class="finished-card"></view>
+        <view class="finished-card"></view>
+        <view class="finished-card"></view>
       </view>
+    </view>
+    <view class="title">鸡蛋里的盒子</view>
+  </view>
+  <view class="fake-card fake-card-top card-top-radius"></view>
+  <view class="fake-card fake-card-middle card-top-radius"></view>
+  <view class="study-card real-card page card-top-radius">
+    <view class="text-content {{ show ? '' : 'text-content-hidden' }}">
+      {{ cardContent }}
+    </view>
+  </view>
+  <view class="real-card page card-top-radius fly-card"
+      style="{{ flyStyle }}">
+    <view class="text-content {{ show ? '' : 'text-content-hidden' }}" style="opacity: {{ 1 - StudyNumber }}">
+      {{ cardContent }}
+    </view>
+    <view class="finish-tips" style="opacity: {{ StudyNumber }};">
+      <image src="/imgs/finish-green.svg" class="finish-icon"/>
+    </view>
+  </view>
+  <view class="bottom-content page">
+    <view class="gesture-tips">向上划动卡片完成学习</view>
+    <view class="bottom-buttons">
+        <view class="bottom-button common-btn cancel-btn" hover-class="btn-on-hover" bind:tap="onCancelBtn">
+          <image src="/imgs/arrow-back-white.svg" class="btn-icon"/>
+        </view>
+        <view class="bottom-button common-btn primary-btn" hover-class="btn-on-hover" bind:tap="onShowBtn">
+          查看答案
+        </view>
     </view>
   </view>
 </view>

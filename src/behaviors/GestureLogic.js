@@ -10,16 +10,18 @@ module.exports = ({gestureID, threshold, endFuncName, direction}) => Behavior({
 
   methods: {
     [`on${gestureID}GestureStart`]: function (e) {
+      if (!this.data[`enable${gestureID}Gesture`]) return
       const touch = e.changedTouches[0]
-      this.startX = touch.clientX
-      this.startY = touch.clientY
-      this.triggered = false
-      this.moved = false
+      this[`${gestureID}StartX`] = touch.clientX
+      this[`${gestureID}StartY`] = touch.clientY
+      this[`${gestureID}Triggered`] = false
+      this[`${gestureID}Moved`] = false
+      console.log(`[${gestureID}GestureStart]`, e)
     },
   
     [`on${gestureID}GestureMove`]: function (e) {
-      this.moved = true
-      if (!this.data[`enable${gestureID}Gesture`] || this.triggered) return
+      this[`${gestureID}Moved`] = true
+      if (!this.data[`enable${gestureID}Gesture`] || this[`${gestureID}Triggered`]) return
       const touch = e.changedTouches[0]
       const x = touch.clientX
       const y = touch.clientY
@@ -27,9 +29,10 @@ module.exports = ({gestureID, threshold, endFuncName, direction}) => Behavior({
     },
   
     [`on${gestureID}GestureEnd`]: function (e) {
-      if (!this.triggered) this[`reset${gestureID}Gesture`]()
-      this.startX = 0
-      this.startY = 0
+      if (!this[`${gestureID}Triggered`]) this[`reset${gestureID}Gesture`]()
+      this[`${gestureID}StartX`] = 0
+      this[`${gestureID}StartY`] = 0
+      console.log(`[${gestureID}GestureEnd]`, e)
     },
 
     [`reset${gestureID}Gesture`]: function (e) {
@@ -39,21 +42,22 @@ module.exports = ({gestureID, threshold, endFuncName, direction}) => Behavior({
     },
 
     [`_trigger${gestureID}EndFunc`]: function () {
-      if (this.triggered) return
+      if (this[`${gestureID}Triggered`]) return
       wx.vibrateShort()
       if (this[endFuncName]) {
         this[endFuncName]()
       } else {
         console.error(`[${gestureID}] dose not have function: ${endFuncName}`)
       }
-      this.triggered = true
+      this[`${gestureID}Triggered`] = true
     },
 
     [`_set${gestureID}BaseNumber`] (x, y) {
       /**
        * 处理映射关系
        */
-      const {startX, startY} = this
+      const startX = this[`${gestureID}StartX`]
+      const startY = this[`${gestureID}StartY`]
       const deltaX = x - startX
       const deltaY = y - startY
 

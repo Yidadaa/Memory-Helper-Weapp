@@ -3,7 +3,7 @@
   <view class="page-title">概览</view>
   <view class="today-summary with-radius" bind:tap="">
     <view class="summary-date">
-      <view class="date-text">2018 07 20</view>
+      <view class="date-text">{{ today }}</view>
       <image class="date-bg" src="/imgs/star.svg"></image>
     </view>
     <view class="summary-number">
@@ -31,9 +31,6 @@
   <view class="section">
     <view class="section-header">
       <view class="section-title">今日卡组</view>
-      <navigator url="/pages/new-item/index" hover-class="btn-on-hover" class="add-btn">
-        <image src="/imgs/add-circle.svg" alt="添加" class="header-btn" />
-      </navigator>
     </view>
     <empty-list text="{{loadingItems ? '正在拉取数据' : '这里空空如也'}}"
       subText="{{loadingItems ? '请坐和放宽' : '快点击右上角按钮添加一个新卡组吧'}}"

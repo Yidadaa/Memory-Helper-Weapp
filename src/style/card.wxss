@@ -45,3 +45,8 @@
   margin-right: 20rpx;
   display: inline-block;
 }
+
+.card-top-radius {
+  border-top-left-radius: 40rpx;
+  border-top-right-radius: 40rpx;
+}

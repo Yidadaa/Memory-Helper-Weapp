@@ -1,112 +1,192 @@
 @import '/style/animation.wxss';
-@import '/style/list.wxss';
+@import '/style/card.wxss';
 
-.page {
-  background: linear-gradient(to bottom, #00C0FF, rgba(0, 192, 255, 0.3));
+.root-page {
+  background-color: #00C0FF;
+  height: 100vh;
+}
+
+.progress-content {
+  height: 40vh;
+  box-sizing: border-box;
+  padding-top: 10vh;
+}
+
+.progress-content .title {
+  text-align: center;
+  padding: 40rpx 0;
+  font-size: 40rpx;
+  color: rgba(0, 0, 0, 0.6);
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.finished-cards {
+  height: 10vh;
+  display: flex;
+}
+
+.finished-card {
+  height: 100%;
+  width: 6vh;
+  background-color: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.finished-card:not(:first-child) {
+  margin-left: -3vh;
+}
+
+.finished-card:nth-child(1) {
+  opacity: .4;
+  z-index: 2;
+}
+
+.finished-card:nth-child(2) {
+  opacity: .8;
+  z-index: 3;
+}
+
+.finished-card:nth-child(3) {
+  z-index: 4;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.fake-card {
+  height: 400rpx;
+  background-color: #fff;
+  opacity: .5;
+}
+
+.real-card, .fake-card {
+  height: 60vh;
+  position: fixed;
+  bottom: 0;
+  transition: all ease .6s;
+  left: 0;
+}
+
+.fly-start .real-card, .fly-start .fake-card {
+  transition: none;
+}
+
+.fake-card-top {
+  width: 80%;
+  left: 10%;
+  bottom: 40rpx;
+  border-radius: 20rpx;
+}
+
+.fake-card-middle {
+  left: 5%;
+  width: 90%;
+  bottom: 20rpx;
+  border-radius: 30rpx;
+}
+
+.real-card {
+  padding-top: 70rpx;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  background-color: #fff;
+}
+
+.text-content {
+  height: 40vh;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+.text-content-hidden {
+  filter: blur(5px);
+}
+
+/* 动画卡片 */
+.fly-card {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.finish-tips {
   position: absolute;
   height: 100%;
   width: 100%;
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
+  top: 0;
+  left: 0;
 }
 
-.progress {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  position: fixed;
-  top: 140rpx;
-  box-sizing: border-box;
-  padding: 0 100rpx;
-  justify-content: space-between;
+.finish-icon {
+  width: 30%;
+  height: 30%;
 }
 
-.sub-bar {
-  height: 100rpx;
-  width: 70rpx;
-  transition: all ease .3s;
-  border-radius: 10rpx;
-  border: 4rpx #fff solid;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: bold;
-  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.1);
-}
-
-.finished {
-  background-color: rgb(108, 202, 31);
-}
-
-.restudy {
-  background-color:rgb(0, 200, 200);
-}
-
-.remained {
-  background-color: rgb(255, 62, 120);
-}
-
-.left-radius {
-  border-top-left-radius: 100rpx;
-  border-bottom-left-radius: 100rpx;
-}
-
-.right-radius {
-  border-top-right-radius: 100rpx;
-  border-bottom-right-radius: 100rpx;
-}
-
-.box-3d {
-  transform-style: preserve-3d;
-  height: 50%;
-  margin: 100rpx;
-}
-
-.item-reversed {
-  animation: card-reverse linear .3s forwards;
-}
-
-.item {
-  height: 100%;
-  background-color: #fff;
-  box-shadow: 20rpx 30rpx 40rpx rgba(0, 0, 0, 0.05);
+.fly-start .fly-card {
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 40rpx;
-  padding: 40rpx;
-  display: flex;
-  flex-wrap: wrap;
-  transform: rotateY(0deg);
-  transition: all ease .3s;
 }
 
-.item-title {
+.fly-start .fake-card-top {
+  bottom: 0;
+  opacity: 0;
+}
+
+.fly-start .fake-card-middle {
+  width: 80%;
+  left: 10%;
+  bottom: 40rpx;
+  border-radius: 20rpx;
+}
+
+.fly-start .study-card {
+  left: 5%;
+  width: 90%;
+  bottom: 20rpx;
+  border-radius: 30rpx;
+  color: transparent;
+  opacity: .5;
+}
+
+.fly-start .text-content {
+  overflow: hidden;
+}
+
+.bottom-content {
   width: 100%;
-  font-size: 36rpx;
-  margin-bottom: 40rpx;
-  font-weight: bold;
+  position: fixed;
+  bottom: 52rpx;
+  padding-top: 0;
+  box-sizing: border-box;
+}
+
+.gesture-tips {
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.5);
   text-align: center;
+  padding-bottom: 20rpx;
+  animation: breath 3s ease infinite alternate-reverse;
 }
 
-.item-description {
+.bottom-buttons {
   width: 100%;
-  padding-bottom: 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  animation: slide-in-bottom .5s ease backwards;
+  animation-delay: .1s;
 }
 
-.card-front, .card-back {
-  backface-visibility: hidden;
-}
-
-@keyframes card-reverse {
-  0% {
-    transform: rotateY(0deg) translateZ(0);
-  }
-  50% {
-    transform: rotateY(90deg) translateY(100rpx);
-  }
-  100% {
-    transform: rotateY(180deg) translateZ(0);
-  }
+.bottom-button {
+  width: 48%;
 }

@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/study-page/index",
     "pages/summary/index",
     "pages/index/index",
     "pages/item-page/index",
     "pages/new-item/index",
-    "pages/study-page/index",
     "pages/new-card/index",
     "pages/setting/index"
   ],

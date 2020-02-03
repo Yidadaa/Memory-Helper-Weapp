@@ -1,6 +1,7 @@
 //index.js
 import { colors } from '../../utils/constant'
 import api from '../../utils/api'
+import fmt from '../../utils/format'
 
 Page({
   data: {
@@ -8,6 +9,7 @@ Page({
     remained: 10,
     finished: 5,
     time: 10,
+    today: fmt('YYYY MM DD', new Date()),
 
     // 项目信息
     items: [],

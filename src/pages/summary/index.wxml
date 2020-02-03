@@ -12,7 +12,10 @@
   <view class="page-content page">
     <view class="section">
       <view class="section-header">
-        <view class="section-title">复习进度</view>
+        <view class="section-title">所有卡组</view>
+        <navigator url="/pages/new-item/index" hover-class="btn-on-hover" class="add-btn">
+          <image src="/imgs/add-circle.svg" alt="添加" class="header-btn" />
+        </navigator>
       </view>
       <empty-list text="{{loadingProgress ? '正在拉取复习进度' : '这里空空如也'}}"
         subText="{{loadingProgress ? '请躺和放平' : '首页可以添加卡组'}}"
