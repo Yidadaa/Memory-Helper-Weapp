@@ -35,8 +35,12 @@ Component({
 
     onShowBtn () {
       this.setData({
-        show: !this.data.show
+        show: true
       })
+    },
+
+    onCancelBtn () {
+      wx.navigateBack()
     },
 
     onGestureFinish () {

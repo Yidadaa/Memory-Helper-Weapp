@@ -4,10 +4,8 @@
     bind:touchend="onTouchEnd">
   <view class="progress-content">
     <view class="progress">
-      <view class="finished-cards">
-        <view class="finished-card"></view>
-        <view class="finished-card"></view>
-        <view class="finished-card"></view>
+      <view class="finished-cards {{ flyStart || flyDone ? 'animating' : '' }}">
+        <view class="finished-card" wx:for="{{ [1, 2, 3] }}" wx:key="index" style=""></view>
       </view>
       <view class="progress-data">
         <view class="progress-line">
