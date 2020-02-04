@@ -16,7 +16,7 @@
       </view>
       <view class="colors">
         <view class="color" style="background: {{item}}" wx:for="{{colors}}" data-index="{{index}}"
-            bind:tap="onColorSelected" wx:key="{{index}}">
+            bind:tap="onColorSelected" wx:key="index">
           <view class="selected-indicator" wx:if="{{index === selectedColorIndex}}"></view>  
         </view>
       </view>
