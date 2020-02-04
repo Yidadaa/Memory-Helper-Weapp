@@ -11,6 +11,7 @@ const names = [
   'getCardGroup',
   'deleteCardGroup',
   'createCard',
+  'deleteCards',
   'getCard',
   'getAllCardsOf',
   'updateCard'

@@ -87,6 +87,16 @@ const functions = {
     })
   },
 
+  deleteCards: async (event) => {
+    return db.collection('Card').where({
+      _id: db.command.in(event.cards)
+    }).update({
+      data: {
+        isDeleted: true
+      }
+    })
+  },
+
   getAllCardsOf: async (event) => {
     const wxContext = cloud.getWXContext()
     const cards = db.collection('Card').where({
